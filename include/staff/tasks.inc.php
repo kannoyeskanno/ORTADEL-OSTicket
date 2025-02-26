@@ -2,7 +2,7 @@
 $tasks = Task::objects();
 $date_header = $date_col = false;
 
-// Make sure the cdata materialized view is available
+// Make sure the cdata materialized view is available sample testing shean 
 TaskForm::ensureDynamicDataView();
 
 // Remove some variables from query string.
@@ -323,130 +323,128 @@ if ($thisstaff->hasPerm(Task::PERM_DELETE, false)) {
  <input type="hidden" name="do" id="action" value="" >
  <input type="hidden" name="status" value="<?php echo
  Format::htmlchars($_REQUEST['status'], true); ?>" >
- <table class="list" border="0" cellspacing="1" cellpadding="2" width="940">
-    <thead>
-        <tr>
-            <?php if ($thisstaff->canManageTickets()) { ?>
-	        <th width="4%">&nbsp;</th>
-            <?php } ?>
+ <div class="table-responsive">
+    <table class="table table-hover" border="0" cellspacing="1" cellpadding="2" width="100%">
+        <thead class="bg-dark">
+            <tr>
+                <?php if ($thisstaff->canManageTickets()) { ?>
+                <th scope="col">&nbsp;</th>
+                <?php } ?>
 
-            <?php
-            // Query string
-            unset($args['sort'], $args['dir'], $args['_pjax']);
-            $qstr = Http::build_query($args);
-            // Show headers
-            foreach ($queue_columns as $k => $column) {
-                echo sprintf( '<th width="%s"><a href="?sort=%s&dir=%s&%s"
-                        class="%s">%s</a></th>',
+                <?php
+                // Query string
+                unset($args['sort'], $args['dir'], $args['_pjax']);
+                $qstr = Http::build_query($args);
+                // Show headers
+                foreach ($queue_columns as $k => $column) {
+                    echo sprintf( 
+                        '<th scope="col" style="max-width: %s; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"><a href="?sort=%s&dir=%s&%s" class="%s">%s</a></th>',
                         $column['width'],
                         $column['sort'] ?: $k,
                         $column['sort_dir'] ? 0 : 1,
                         $qstr,
-                        isset($column['sort_dir'])
-                        ? ($column['sort_dir'] ? 'asc': 'desc') : '',
-                        $column['heading']);
-            }
-            ?>
-        </tr>
-     </thead>
-     <tbody>
-        <?php
-        // Setup Subject field for display
-        $total=0;
-        $title_field = TaskForm::getInstance()->getField('title');
-        $ids=($errors && $_POST['tids'] && is_array($_POST['tids']))?$_POST['tids']:null;
-        foreach ($tasks as $T) {
-            $T['isopen'] = ($T['flags'] & TaskModel::ISOPEN != 0); //XXX:
-            $total += 1;
-            $tag=$T['staff_id']?'assigned':'openticket';
-            $flag=null;
-            if($T['lock__staff_id'] && $T['lock__staff_id'] != $thisstaff->getId())
-                $flag='locked';
-            elseif($T['isoverdue'])
-                $flag='overdue';
-
-            $assignee = '';
-            $dept = Dept::getLocalById($T['dept_id'], 'name', $T['dept__name']);
-            $assinee ='';
-            if ($T['staff_id']) {
-                $staff =  new AgentsName($T['staff__firstname'].' '.$T['staff__lastname']);
-                $assignee = sprintf('<span class="Icon staffAssigned">%s</span>',
-                        Format::truncate((string) $staff, 40));
-            } elseif($T['team_id']) {
-                $assignee = sprintf('<span class="Icon teamAssigned">%s</span>',
-                    Format::truncate(Team::getLocalById($T['team_id'], 'name', $T['team__name']),40));
-            }
-
-            $threadcount=$T['thread_count'];
-            $number = $T['number'];
-            if ($T['isopen'])
-                $number = sprintf('<b>%s</b>', $number);
-
-            $title = Format::truncate($title_field->display($title_field->to_php($T['cdata__title'])), 40);
-            ?>
-            <tr id="<?php echo $T['id']; ?>">
-                <?php
-                if ($thisstaff->canManageTickets()) {
-                    $sel = false;
-                    if ($ids && in_array($T['id'], $ids))
-                        $sel = true;
-                    ?>
-                <td align="center" class="nohover">
-                    <input class="ckb" type="checkbox" name="tids[]"
-                        value="<?php echo $T['id']; ?>" <?php echo $sel?'checked="checked"':''; ?>>
-                </td>
-                <?php } ?>
-                <td nowrap>
-                  <a class="preview"
-                    href="tasks.php?id=<?php echo $T['id']; ?>"
-                    data-preview="#tasks/<?php echo $T['id']; ?>/preview"
-                    ><?php echo $number; ?></a></td>
-                <td nowrap>
-                  <a class="preview"
-                    href="tickets.php?id=<?php echo $T['ticket__ticket_id']; ?>"
-                    data-preview="#tickets/<?php echo $T['ticket__ticket_id']; ?>/preview"
-                    ><?php echo $T['ticket__number']; ?></a></td>
-                <td align="center" nowrap><?php echo
-                Format::datetime($T[$date_col ?: 'created']); ?></td>
-                <td><a <?php if ($flag) { ?> class="Icon <?php echo $flag; ?>Ticket" title="<?php echo ucfirst($flag); ?> Ticket" <?php } ?>
-                    href="tasks.php?id=<?php echo $T['id']; ?>"><?php
-                    echo $title; ?></a>
-                     <?php
-                        if ($threadcount>1)
-                            echo "<small>($threadcount)</small>&nbsp;".'<i
-                                class="icon-fixed-width icon-comments-alt"></i>&nbsp;';
-                        if ($T['collab_count'])
-                            echo '<i class="icon-fixed-width icon-group faded"></i>&nbsp;';
-                        if ($T['attachment_count'])
-                            echo '<i class="icon-fixed-width icon-paperclip"></i>&nbsp;';
-                    ?>
-                </td>
-                <td nowrap>&nbsp;<?php echo Format::truncate($dept, 40); ?></td>
-                <td nowrap>&nbsp;<?php echo $assignee; ?></td>
+                        isset($column['sort_dir']) ? ($column['sort_dir'] ? 'asc' : 'desc') : '',
+                        $column['heading']
+                    );
+                }
+                ?>
             </tr>
+        </thead>
+        <tbody>
             <?php
-            } //end of foreach
-        if (!$total)
-            $ferror=__('There are no tasks matching your criteria.');
-        ?>
-    </tbody>
-    <tfoot>
-     <tr>
-        <td colspan="7">
-            <?php if($total && $thisstaff->canManageTickets()){ ?>
-            <?php echo __('Select');?>:&nbsp;
-            <a id="selectAll" href="#ckb"><?php echo __('All');?></a>&nbsp;&nbsp;
-            <a id="selectNone" href="#ckb"><?php echo __('None');?></a>&nbsp;&nbsp;
-            <a id="selectToggle" href="#ckb"><?php echo __('Toggle');?></a>&nbsp;&nbsp;
-            <?php }else{
-                echo '<i>';
-                echo $ferror?Format::htmlchars($ferror):__('Query returned 0 results.');
-                echo '</i>';
-            } ?>
-        </td>
-     </tr>
-    </tfoot>
+            // Setup Subject field for display
+            $total=0;
+            $title_field = TaskForm::getInstance()->getField('title');
+            $ids=($errors && $_POST['tids'] && is_array($_POST['tids']))?$_POST['tids']:null;
+            foreach ($tasks as $T) {
+                $T['isopen'] = ($T['flags'] & TaskModel::ISOPEN != 0); //XXX:
+                $total += 1;
+                $tag=$T['staff_id']?'assigned':'openticket';
+                $flag=null;
+                if($T['lock__staff_id'] && $T['lock__staff_id'] != $thisstaff->getId())
+                    $flag='locked';
+                elseif($T['isoverdue'])
+                    $flag='overdue';
+
+                $assignee = '';
+                $dept = Dept::getLocalById($T['dept_id'], 'name', $T['dept__name']);
+                $assinee = '';
+                if ($T['staff_id']) {
+                    $staff = new AgentsName($T['staff__firstname'].' '.$T['staff__lastname']);
+                    $assignee = sprintf('<span class="Icon staffAssigned">%s</span>',
+                            Format::truncate((string) $staff, 40));
+                } elseif($T['team_id']) {
+                    $assignee = sprintf('<span class="Icon teamAssigned">%s</span>',
+                        Format::truncate(Team::getLocalById($T['team_id'], 'name', $T['team__name']), 40));
+                }
+
+                $threadcount = $T['thread_count'];
+                $number = $T['number'];
+                if ($T['isopen'])
+                    $number = sprintf('<b>%s</b>', $number);
+
+                $title = Format::truncate($title_field->display($title_field->to_php($T['cdata__title'])), 40);
+                ?>
+                <tr class="table-active" id="<?php echo $T['id']; ?>">
+                    <?php
+                    if ($thisstaff->canManageTickets()) {
+                        $sel = false;
+                        if ($ids && in_array($T['id'], $ids))
+                            $sel = true;
+                    ?>
+                    <td align="center" class="nohover">
+                        <input class="ckb" type="checkbox" name="tids[]"
+                            value="<?php echo $T['id']; ?>" <?php echo $sel?'checked="checked"':''; ?>>
+                    </td>
+                    <?php } ?>
+                    <td nowrap>
+                        <a class="preview" href="tasks.php?id=<?php echo $T['id']; ?>"
+                           data-preview="#tasks/<?php echo $T['id']; ?>/preview"><?php echo $number; ?></a>
+                    </td>
+                    <td nowrap>
+                        <a class="preview" href="tickets.php?id=<?php echo $T['ticket__ticket_id']; ?>"
+                           data-preview="#tickets/<?php echo $T['ticket__ticket_id']; ?>/preview"><?php echo $T['ticket__number']; ?></a>
+                    </td>
+                    <td nowrap><?php echo Format::datetime($T[$date_col ?: 'created']); ?></td>
+                    <td>
+                        <a <?php if ($flag) { ?> class="Icon <?php echo $flag; ?>Ticket" title="<?php echo ucfirst($flag); ?> Ticket" <?php } ?>
+                            href="tasks.php?id=<?php echo $T['id']; ?>"><?php echo $title; ?></a>
+                         <?php
+                            if ($threadcount > 1)
+                                echo "<small>($threadcount)</small>&nbsp;".'<i class="icon-fixed-width icon-comments-alt"></i>&nbsp;';
+                            if ($T['collab_count'])
+                                echo '<i class="icon-fixed-width icon-group faded"></i>&nbsp;';
+                            if ($T['attachment_count'])
+                                echo '<i class="icon-fixed-width icon-paperclip"></i>&nbsp;';
+                        ?>
+                    </td>
+                    <td nowrap>&nbsp;<?php echo Format::truncate($dept, 40); ?></td>
+                    <td nowrap>&nbsp;<?php echo $assignee; ?></td>
+                </tr>
+                <?php
+                } //end of foreach
+            if (!$total)
+                $ferror = __('There are no tasks matching your criteria.');
+            ?>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="7">
+                    <?php if ($total && $thisstaff->canManageTickets()) { ?>
+                    <?php echo __('Select');?>:&nbsp;
+                    <a id="selectAll" href="#ckb"><?php echo __('All');?></a>&nbsp;&nbsp;
+                    <a id="selectNone" href="#ckb"><?php echo __('None');?></a>&nbsp;&nbsp;
+                    <a id="selectToggle" href="#ckb"><?php echo __('Toggle');?></a>&nbsp;&nbsp;
+                    <?php } else {
+                        echo '<i>';
+                        echo $ferror ? Format::htmlchars($ferror) : __('Query returned 0 results.');
+                        echo '</i>';
+                    } ?>
+                </td>
+            </tr>
+        </tfoot>
     </table>
+</div>
     <?php
     if ($total>0) { //if we actually had any tasks returned.
         echo '<div>&nbsp;'.__('Page').':'.$pageNav->getPageLinks().'&nbsp;';
