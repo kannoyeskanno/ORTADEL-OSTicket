@@ -226,73 +226,73 @@ if ($queue->id > 0 && $queue->isOwner($thisstaff)) { ?>
 <?php csrf_token(); ?>
  <input type="hidden" name="a" value="mass_process" >
  <input type="hidden" name="do" id="action" value="" >
-
-<table class="list queue tickets" border="0" cellspacing="1" cellpadding="2" width="940">
-  <thead>
-    <tr>
-<?php
-$canManageTickets = $thisstaff->canManageTickets();
-if ($canManageTickets) { ?>
-        <th style="width:12px"></th>
-<?php
-}
-
-foreach ($columns as $C) {
-    $heading = Format::htmlchars($C->getLocalHeading());
-    if ($C->isSortable()) {
-        $args = $_GET;
-        $dir = $sort['col'] != $C->id ?: ($sort['dir'] ? 'desc' : 'asc');
-        $args['dir'] = $sort['col'] != $C->id ?: (int) !$sort['dir'];
-        $args['sort'] = $C->id;
-        $heading = sprintf('<a href="?%s" class="%s">%s</a>',
-            Http::build_query($args), $dir, $heading);
-    }
-    echo sprintf('<th width="%s" data-id="%d">%s</th>',
-        $C->getWidth(), $C->id, $heading);
-}
-?>
-    </tr>
-  </thead>
-  <tbody>
-<?php
-foreach ($tickets as $T) {
-    echo '<tr>';
-    if ($canManageTickets) { ?>
-        <td><input type="checkbox" class="ckb" name="tids[]"
-            value="<?php echo $T['ticket_id']; ?>" /></td>
-<?php
-    }
-    foreach ($columns as $C) {
-        list($contents, $styles) = $C->render($T);
-        if ($style = $styles ? 'style="'.$styles.'"' : '') {
-            echo "<td $style><div $style>$contents</div></td>";
+ <div class="table-responsive">
+    <table class="table list queue tickets" border="0" cellspacing="1" cellpadding="2" width="940">
+        <thead class="bg-dark">
+            <tr>
+        <?php
+        $canManageTickets = $thisstaff->canManageTickets();
+        if ($canManageTickets) { ?>
+                <th scope="col" style="width:12px"></th>
+        <?php
         }
-        else {
-            echo "<td>$contents</td>";
-        }
-    }
-    echo '</tr>';
-}
-?>
-  </tbody>
-  <tfoot>
-    <tr>
-      <td colspan="<?php echo count($columns)+1; ?>">
-        <?php if ($count && $canManageTickets) {
-        echo __('Select');?>:&nbsp;
-        <a id="selectAll" href="#ckb"><?php echo __('All');?></a>&nbsp;&nbsp;
-        <a id="selectNone" href="#ckb"><?php echo __('None');?></a>&nbsp;&nbsp;
-        <a id="selectToggle" href="#ckb"><?php echo __('Toggle');?></a>&nbsp;&nbsp;
-        <?php }else{
-            echo '<i>';
-            echo $ferror?Format::htmlchars($ferror):__('Query returned 0 results.');
-            echo '</i>';
-        } ?>
-      </td>
-    </tr>
-  </tfoot>
-</table>
 
+        foreach ($columns as $C) {
+            $heading = Format::htmlchars($C->getLocalHeading());
+            if ($C->isSortable()) {
+                $args = $_GET;
+                $dir = $sort['col'] != $C->id ?: ($sort['dir'] ? 'desc' : 'asc');
+                $args['dir'] = $sort['col'] != $C->id ?: (int) !$sort['dir'];
+                $args['sort'] = $C->id;
+                $heading = sprintf('<a href="?%s" class="%s">%s</a>',
+                    Http::build_query($args), $dir, $heading);
+            }
+            echo sprintf('<th width="%s" data-id="%d">%s</th>',
+                $C->getWidth(), $C->id, $heading);
+        }
+        ?>
+            </tr>
+        </thead>
+    <tbody>
+    <?php
+    foreach ($tickets as $T) {
+        echo '<tr>';
+        if ($canManageTickets) { ?>
+            <td><input type="checkbox" class="ckb" name="tids[]"
+                value="<?php echo $T['ticket_id']; ?>" /></td>
+    <?php
+        }
+        foreach ($columns as $C) {
+            list($contents, $styles) = $C->render($T);
+            if ($style = $styles ? 'style="'.$styles.'"' : '') {
+                echo "<td $style><div $style>$contents</div></td>";
+            }
+            else {
+                echo "<td>$contents</td>";
+            }
+        }
+        echo '</tr>';
+    }
+    ?>
+    </tbody>
+    <tfoot>
+        <tr>
+        <td colspan="<?php echo count($columns)+1; ?>">
+            <?php if ($count && $canManageTickets) {
+            echo __('Select');?>:&nbsp;
+            <a id="selectAll" href="#ckb"><?php echo __('All');?></a>&nbsp;&nbsp;
+            <a id="selectNone" href="#ckb"><?php echo __('None');?></a>&nbsp;&nbsp;
+            <a id="selectToggle" href="#ckb"><?php echo __('Toggle');?></a>&nbsp;&nbsp;
+            <?php }else{
+                echo '<i>';
+                echo $ferror?Format::htmlchars($ferror):__('Query returned 0 results.');
+                echo '</i>';
+            } ?>
+        </td>
+        </tr>
+    </tfoot>
+    </table>
+ </div>
 <?php
     if ($count > 0 || $skipCount) { //if we actually had any tickets returned.
 ?>  <div>
