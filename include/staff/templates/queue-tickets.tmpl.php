@@ -1,7 +1,7 @@
 <?php
 // Calling convention (assumed global scope):
 // $tickets - <QuerySet> with all columns and annotations necessary to
-//      render the full page
+//      render the full page aaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 
 
 // Impose visibility constraints
