@@ -102,7 +102,7 @@ require CLIENTINC_DIR . 'header.inc.php';
                         <p class="featured-tag-line">Contact us and we’ll get back to you as soon as possible.</p>
                     </div>
                     <div class="col-sm-2">
-                        <a href="open.php" class="pull-right btn btn-primary" class="blue button"><?php
+                        <a href="open.php" class="pull-right btn btn-primary rounded-lg border-radius-none" class="blue button"><?php
                         echo __('Open a New Ticket'); ?></a>
                     </div>
                 </div>

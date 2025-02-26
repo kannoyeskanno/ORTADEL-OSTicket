@@ -61,18 +61,19 @@ $users->values('id', 'name', 'default_email__address', 'account__id',
     'account__status', 'created', 'updated');
 $users->order_by($order . $order_column);
 ?>
-<div id="basic_search">
+<div id="basic_search p-1">
     <div style="min-height:25px;">
         <form action="users.php" method="get">
             <?php csrf_token(); ?>
             <input type="hidden" name="a" value="search">
-            <div class="attached input">
+            <div class="attached input d-flex justify-content-end">
                 <input type="text" class="basic-search" id="basic-user-search" name="query"
-                         size="30" value="<?php echo Format::htmlchars($_REQUEST['query']); ?>"
+                         size="50" value="<?php echo Format::htmlchars($_REQUEST['query']); ?>"
                         autocomplete="off" autocorrect="off" autocapitalize="off">
             <!-- <td>&nbsp;&nbsp;<a href="" id="advanced-user-search">[advanced]</a></td> -->
-                <button type="submit" class="attached button"><i class="icon-search"></i>
-                </button>
+                <button type="submit" class="search border-none button p-1 bg-light">
+                <i class="bi bi-search"></i>
+                            </button>
             </div>
         </form>
     </div>
@@ -80,12 +81,12 @@ $users->order_by($order . $order_column);
 <form id="users-list" action="users.php" method="POST" name="staff" >
 
 <div style="margin-bottom:20px; padding-top:5px;">
-    <div class="sticky bar opaque">
-        <div class="content">
+    <!-- <div class="sticky bar opaque px-5"> -->
+        <div id="user-top-bar" class="content p-2 d-flex flex-center justify-content-between">
             <div class="pull-left flush-left">
                 <h2><?php echo __('User Directory'); ?></h2>
             </div>
-            <div class="pull-right">
+            <div id="user-actions-btn" class="pull-right">
                 <?php if ($thisstaff->hasPerm(User::PERM_CREATE)) { ?>
                 <a class="green button action-button popup-dialog"
                    href="#users/add">
@@ -136,7 +137,7 @@ $users->order_by($order . $order_column);
                 </div>
             </div>
         </div>
-    </div>
+    <!-- </div> -->
 </div>
 <div class="clear"></div>
 <?php
@@ -151,8 +152,9 @@ else
  <input type="hidden" id="action" name="a" value="" >
  <input type="hidden" id="selected-count" name="count" value="" >
  <input type="hidden" id="org_id" name="org_id" value="" >
- <table class="table table-hover" border="0" cellspacing="1" cellpadding="0" width="940">
-    <thead>
+<div class="table-responsive  rounded-3" style="max-height: 60vh; padding: 1rem; overflow-y: auto;">
+<table id="user-table" class="table table-striped table-hover p-5" cellspacing="1" style="border: 1px solid gray; border-radius: 20px;">
+<thead>
         <tr>
             <th nowrap width="4%">&nbsp;</th>
             <th><a class="text-decoration-none text-dark" <?php echo $name_sort; ?> href="users.php?<?php
@@ -186,10 +188,10 @@ else
                     $sel=true;
                 ?>
                <tr id="<?php echo $U['id']; ?>">
-                <td nowrap align="center">
+                <td id="check-box" nowrap align="center">
                     <input type="checkbox" value="<?php echo $U['id']; ?>" class="ckb mass nowarn"/>
                 </td>
-                <td>&nbsp;
+                <td id="td" data-cell="name" >&nbsp;
                     <a class="preview"
                         href="users.php?id=<?php echo $U['id']; ?>"
                         data-preview="#users/<?php echo $U['id']; ?>/preview"><?php
@@ -201,9 +203,9 @@ else
                              <small>(%d)</small>', $U['ticket_count']);
                     ?>
                 </td>
-                <td><?php echo $status; ?></td>
-                <td><?php echo Format::date($U['created']); ?></td>
-                <td><?php echo Format::datetime($U['updated']); ?>&nbsp;</td>
+                <td id="td" data-cell="status" ><?php echo $status; ?></td>
+                <td id="td" data-cell="created"><?php echo Format::date($U['created']); ?></td>
+                <td id="td" data-cell="updated" ><?php echo Format::datetime($U['updated']); ?>&nbsp;</td>
                </tr>
 <?php   } //end of foreach. ?>
     </tbody>
@@ -224,6 +226,7 @@ else
      </tr>
     </tfoot>
 </table>
+</div>
 <?php
 if ($total) {
     echo '<div>';

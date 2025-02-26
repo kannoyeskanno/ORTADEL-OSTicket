@@ -43,6 +43,9 @@ if (osTicket::is_ie()) {
     <meta name="description" content="customer support platform">
     <meta name="keywords" content="osTicket, Customer support system, support ticket system">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.jsdelivr.net;">
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' https://code.jquery.com https://cdn.jsdelivr.net;">
+    <script src="//unpkg.com/alpinejs" defer></script>
 
     <!-- Bootstrap CSS Old-->
     <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
@@ -133,12 +136,19 @@ if ($nav) { ?>
         } ?>
             </li>
         </ul>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <button
+    class="navbar-toggler"
+    type="button"
+    data-bs-toggle="collapse"
+    data-bs-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  >
             <span class="navbar-toggler-icon"></span>
         </button>
-
         <div class="collapse navbar-collapse" id="navbarSupportedContent" style="justify-content: flex-end;">
+        <!-- <div class="collapse navbar-collapse" id="navbarSupportedContent" style="justify-content: flex-end;"> -->
 
             <ul class="navbar-nav mr-auto">
 

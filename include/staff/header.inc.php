@@ -65,7 +65,16 @@ if (osTicket::is_ie())
     <!-- Favicons -->
     <link rel="icon" type="image/png" href="<?php echo ROOT_PATH ?>images/oscar-favicon-32x32.png" sizes="32x32" />
     <link rel="icon" type="image/png" href="<?php echo ROOT_PATH ?>images/oscar-favicon-16x16.png" sizes="16x16" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"> -->
+    <link href="<?php echo ROOT_PATH ?>/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet"> -->
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="<?php echo ROOT_PATH; ?>/assets/one/css/_staff.css?" media="screen"/>
+    <link rel="stylesheet" href="<?php echo ROOT_PATH; ?>/assets/one/css/staff_users.css?" media="screen"/>
+    
+  
+
 
     <?php
     if($ost && ($headers=$ost->getExtraHeaders())) {
@@ -83,38 +92,81 @@ if (osTicket::is_ie())
     elseif($ost->getNotice())
         echo sprintf('<div id="notice_bar">%s</div>', $ost->getNotice());
     ?>
-    <div id="header" class="py-1 px-3 position-sticky top-0 overflow-hidden d-flex justify-content-between z-100">
-    <!-- Logo hardcoded -->
-    <a href="https://ortadeltech.com" class="nav-brand flex-shrink-0 text-decoration-none d-none justify-content-center d-md-flex border-b-none mb-0 ms-3 flex-row align-items-center" style="width: 200px;">
-            <img src="https://ortadeltech.com/assets/images/ORTADEL_logo.png" width="35" style="margin-right: .8rem;" alt="logo">
-            <span class="ml-2">
-                <h1 class="h5 m-0 ls-1 text-decoration-none">ORTADEL</h1>
-                <small>Technologies Corporation</small>
-            </span>
-        </a>
+    <div id="header" class="py-1 px-3 position-sticky top-0 overflow-hidden d-flex justify-content-between z-100 bg-dark">
+<a id="nav-brand" class="nav-brand flex-shrink-0 text-decoration-none justify-content-center d-md-flex border-b-none mb-0 ms-3 flex-row align-items-start">
+        <img src="https://ortadeltech.com/assets/images/ORTADEL_logo.png" width="35" style="margin-right: .8rem;" alt="logo">
+        <span class="ml-2 text-light">
+            <h1 class="h5 m-0 ls-1 text-decoration-none">ORTADEL</h1>
+            <small>Technologies Corporation</small>
+        </span>
+    </a>
 
-        <p id="info" class="pull-right no-pjax text-light"><?php echo sprintf(__('Welcome, %s.'), '<strong>'.$thisstaff->getFirstName().'</strong>'); ?>
-           <?php
-            if($thisstaff->isAdmin() && !defined('ADMINPAGE')) { ?>
-            | <a href="<?php echo ROOT_PATH ?>scp/admin.php" class="no-pjax"><?php echo __('Admin Panel'); ?></a>
-            <?php }else{ ?>
-            | <a href="<?php echo ROOT_PATH ?>scp/index.php" class="no-pjax"><?php echo __('Agent Panel'); ?></a>
-            <?php } ?>
-            | <a href="<?php echo ROOT_PATH ?>scp/profile.php"><?php echo __('Profile'); ?></a>
-            | <a href="<?php echo ROOT_PATH ?>scp/logout.php?auth=<?php echo $ost->getLinkToken(); ?>" class="no-pjax"><?php echo __('Log Out'); ?></a>
-        </p>
+    <button class="btn btn-outline-none focus-none d-md-none d-flex flex-end" type="button" style="margin-left: auto;" data-bs-toggle="offcanvas" data-bs-target="#offcanvasMenu" aria-controls="offcanvasMenu">
+            <span class="navbar-toggler-icon"></span>
+    </button>
 
-    <!-- Logo orignal -->
-        <!-- <a href="<?php echo ROOT_PATH ?>scp/index.php" class="no-pjax" id="logo">
-            <span class="valign-helper"></span>
-            <img src="<?php echo ROOT_PATH ?>scp/logo.php?<?php echo strtotime($cfg->lastModified('staff_logo_id')); ?>" alt="osTicket &mdash; <?php echo __('Customer Support System'); ?>"/>
-        </a> -->
+    <p id="info" class="d-none d-md-block text-light mb-0">
+        <?php echo sprintf(__('Welcome, %s.'), '<strong>'.$thisstaff->getFirstName().'</strong>'); ?>
+        <?php if($thisstaff->isAdmin() && !defined('ADMINPAGE')) { ?>
+            | <a href="<?php echo ROOT_PATH ?>scp/admin.php" class="no-pjax text-light"><?php echo __('Admin Panel'); ?></a>
+        <?php } else { ?>
+            | <a href="<?php echo ROOT_PATH ?>scp/index.php" class="no-pjax text-light"><?php echo __('Agent Panel'); ?></a>
+        <?php } ?>
+        | <a href="<?php echo ROOT_PATH ?>scp/profile.php" class="text-light"><?php echo __('Profile'); ?></a>
+        | <a href="<?php echo ROOT_PATH ?>scp/logout.php?auth=<?php echo $ost->getLinkToken(); ?>" class="no-pjax text-light"><?php echo __('Log Out'); ?></a>
+    </p>
+</div>
 
-      
+<div id="offcanvasMenu" class="offcanvas offcanvas-end p-2" style="width: 250px;">
+    <button type="button" class="btn-close btn-close-white focus-none" data-bs-dismiss="offcanvas" aria-label="Close"></button>
 
-
-
+        <div class="offcanvas-header">
+        <h5 class="offcanvas-title text-white" id="offcanvasMenuLabel">Menu</h5>
     </div>
+    <div class="offcanvas-body">
+    <p><?php echo sprintf(__('Welcome, %s.'), '<strong>' . $thisstaff->getFirstName() . '</strong>'); ?></p>
+    
+    <ul id="agent-items-nav" class="list-unstyled d-flex flex-column justify-content-between h-100" 
+    style="max-height: 81vh; padding: 0 10px; overflow: hidden;">
+        <div>
+            <?php if ($thisstaff->isAdmin() && !defined('ADMINPAGE')) { ?>
+                <li class="mt-3">
+                    <a class="text-light text-decoration-none no-pjax d-flex align-items-center" href="<?php echo ROOT_PATH ?>scp/admin.php">
+                        <i class="bi bi-gear-fill me-2"></i> 
+                        <?php echo __('Admin Panel'); ?>
+                    </a>
+                </li>
+            <?php } else { ?>
+                <li class="mt-3">
+                    <a class="text-light text-decoration-none no-pjax d-flex align-items-center" href="<?php echo ROOT_PATH ?>scp/index.php">
+                        <i class="bi bi-person-fill me-2"></i> 
+                        <?php echo __('Agent Panel'); ?>
+                    </a>
+                </li>
+            <?php } ?>
+
+            <li class="mt-3">
+                <a class="text-light text-decoration-none no-pjax d-flex align-items-center" href="<?php echo ROOT_PATH ?>scp/profile.php">
+                    <i class="bi bi-person-circle me-2"></i> 
+                    <?php echo __('Profile'); ?>
+                </a>
+            </li>
+        </div>
+        <div id="logout" class="mt-auto">
+            
+                <a class="text-decoration-none no-pjax d-flex align-items-center text-danger" href="<?php echo ROOT_PATH ?>scp/logout.php?auth=<?php echo $ost->getLinkToken(); ?>">
+                    <i class="bi bi-box-arrow-right me-2 text-danger"></i> 
+                    <?php echo __('Log Out'); ?>
+                </a>
+            
+        </div>
+       
+
+    </ul>
+</div>
+
+</div>
+
     <div id="pjax-container" class="<?php if ($_POST) echo 'no-pjax'; ?>">
 <?php } else {
     header('X-PJAX-Version: ' . GIT_VERSION);
@@ -129,9 +181,9 @@ if (osTicket::is_ie())
     } ?>
     <title><?php echo ($ost && ($title=$ost->getPageTitle()))?$title:'osTicket :: '.__('Staff Control Panel'); ?></title><?php
 } # endif X_PJAX ?>
-<ul id="nav" >
+<!-- <ul id="nav" > -->
 <?php include STAFFINC_DIR . "templates/navigation.tmpl.php"; ?>
-</ul>
+<!-- </ul> -->
     <?php include STAFFINC_DIR . "templates/sub-navigation.tmpl.php"; ?>
 
         <div id="content">

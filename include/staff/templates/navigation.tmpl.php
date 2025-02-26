@@ -1,11 +1,10 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <div class="container-fluid">
-   
+  <div class="container">
+<!--    
     <button id="burger-user-nav-btn" class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
-    </button>
+    </button> -->
 
-    <div class="collapse navbar-collapse" id="navbarNav">
+    <div id="navbarNav">
       <ul class="navbar-nav">
         <?php
         if ($nav && ($tabs = $nav->getTabs()) && is_array($tabs)) {
@@ -13,16 +12,15 @@
             if ($tab['href'][0] != '/')
               $tab['href'] = ROOT_PATH . 'scp/' . $tab['href'];
 
-            // Main Nav Item
             echo sprintf(
-              '<li class="nav-item %s %s"><a class="nav-link text-decoration-none fs-4" href="%s">%s</a>',
+              '<li id="main-tabs" class="nav-item %s %s"><a id="link" class="nav-link text-decoration-none fs-5 lead" href="%s">%s%s</a>',
               isset($tab['active']) ? 'active' : 'inactive',
               @$tab['class'] ?: '',
               $tab['href'],
+              $tab['icon'],
               $tab['desc']
             );
 
-            // Submenu (if exists)
             if (!isset($tab['active']) && ($subnav = $nav->getSubMenu($name))) {
               echo '<ul class="dropdown-menu">';
               foreach ($subnav as $k => $item) {
@@ -49,4 +47,3 @@
       </ul>
     </div>
   </div>
-</nav>

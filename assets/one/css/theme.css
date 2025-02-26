@@ -637,18 +637,22 @@ body {
 #header {
   position: relative;
   height: 71px;
-  padding: 0;
+  padding: 0 0 0 20em;
   width: 100%;
   background: #fff;
   
 }
 
+
+
 @media (max-width: 767px) {
-  #header {
+  /* #header {
     height: 0px;
-  }
+  } */
+
+ 
   #container {
-    padding: 0;
+    padding: 0 1.2rem;
   }
 }
 #logo {
@@ -813,6 +817,14 @@ body {
   padding-left: 0;
   border-top: 1px solid #ddd;
 }
+
+
+div.col-sm-2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 #faq ol li {
   list-style: none;
   margin: 0;
@@ -954,6 +966,12 @@ body {
   padding: 3px 0;
   overflow: hidden;
 }
+
+/* form#ticketForm {
+  display: flex;
+  flex-direction: row;
+} */
+
 #ticketForm div label,
 #clientLogin div label {
   display: block;
@@ -1301,6 +1319,12 @@ table.padded tr > th {
   padding-bottom: 5px;
 }
 
+@media (max-width: 767px) {
+  table.table {
+    padding: 1rem;
+  }
+  
+}
 .external-auth + .external-auth {
   margin-top: 4px;
 }
