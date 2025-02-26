@@ -152,7 +152,7 @@ else
  <input type="hidden" id="action" name="a" value="" >
  <input type="hidden" id="selected-count" name="count" value="" >
  <input type="hidden" id="org_id" name="org_id" value="" >
-<div class="table-responsive  rounded-3" style="max-height: 60vh; padding: 1rem; overflow-y: auto;">
+<div class="table-responsive rounded-3" style="max-height: 60vh; border: solid red 1px; padding: 1rem; overflow-y: auto;">
 <table id="user-table" class="table table-striped table-hover p-5" cellspacing="1" style="border: 1px solid gray; border-radius: 20px;">
 <thead>
         <tr>
