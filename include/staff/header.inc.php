@@ -73,6 +73,7 @@ if (osTicket::is_ie())
     <link rel="stylesheet" href="<?php echo ROOT_PATH; ?>/assets/one/css/_staff.css?" media="screen"/>
     <link rel="stylesheet" href="<?php echo ROOT_PATH; ?>/assets/one/css/staff_users.css?" media="screen"/>
     
+    <link rel="stylesheet" href="<?php echo ROOT_PATH; ?>/assets/one/css/staff_task.css?" media="screen"/>
   
 
 
