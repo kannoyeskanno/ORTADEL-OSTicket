@@ -14,6 +14,10 @@ div#pjax-container {
     
 }
 
+div#content {
+    background-color: white;
+  }
+
 
 .navbar-toggler-icon {
     background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='rgba(248, 249, 250, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
@@ -154,6 +158,8 @@ li.nav-item.active span#tab-icon {
 
     }
 
+ 
+
     #navbarNav .nav-item {
         flex: 0 0 calc(100%/5);
         max-width: calc(100%/5);
@@ -241,6 +247,14 @@ table.table.two-column {
   }
 
 
+.bottom-dash-container{
+    border-radius: .3rem;
+    padding: 1rem;
+    box-shadow: inset 0 4px 12px -10px black;
+
+
+}
+
 
 @media (max-width: 767px) {
     
@@ -251,6 +265,9 @@ table.table.two-column {
     position: relative;
   }
 
+  div#topic {
+    display: none;
+  }
   #dept {
     overflow: auto;
     max-width: 100%;
@@ -265,7 +282,28 @@ table.table.two-column {
     min-width: fit-content;
     box-sizing: border-box;
     display: table;
+    margin-bottom: 0px;
+
   }
+
+  tr th,
+  td,
+  #btn-export
+  {
+      font-size: .6rem;
+      
+  }
+
+  #export-table, #btn-export {
+      margin-top: 0;
+      background-color: #1D2329;
+      max-width: 60px;
+      border-radius: .3em;
+      text-align: center;
+      color: #E4E4E4;
+     
+}
+
 
   #ui-datepicker-div {
     width: 100%;
@@ -289,11 +327,28 @@ table.table.two-column {
         display: flex;
         flex-wrap: wrap;
         flex: 1;
-        background-color: red;
     }
     ul.clean.tabs li {
         max-width: 20px;
     }
+
+
+    div#basic_search {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+      }
+    
+      div#basic_search > * { 
+        width: auto;
+        flex: 1;
+        margin: 0;
+        padding: 0;
+      }
+    
 }
 
 

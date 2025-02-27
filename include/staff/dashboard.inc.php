@@ -52,6 +52,9 @@ $plots = $report->getPlotData();
 </div>
 
 <hr/>
+
+<div class="bottom-dash-container">
+
 <h2><?php echo __('Statistics'); ?>&nbsp;<i class="help-tip icon-question-sign" href="#statistics"></i></h2>
 <p><?php echo __('Statistics of tickets organized by department, help topic, and agent.');?></p>
 <p><b><?php echo __('Range: '); ?></b>
@@ -156,7 +159,8 @@ foreach ($groups as $g=>$desc) {
     }
     $first = false; ?>
     </tbody></table>
-    <div style="margin-top: 5px"><button type="submit" class="link button" name="export"
+    <div id="export-table">
+      <button id="btn-export" type="submit" class="link button" name="export"
         value="<?php echo Format::htmlchars($g); ?>">
         <i class="icon-download"></i>
         <?php echo __('Export'); ?></a></div>
@@ -164,6 +168,9 @@ foreach ($groups as $g=>$desc) {
 <?php
 }
 ?>
+
+</div>
+
 </form>
 <script>
     $.drawPlots(<?php echo JsonDataEncoder::encode($report->getPlotData()); ?>);
