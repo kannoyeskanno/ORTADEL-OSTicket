@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 /* TASKS*/
 
 #basic_search {
@@ -236,3 +237,271 @@ table.table tfoot td a:hover {
 
 
 
+=======
+
+div.table-responsive.rounded-1 {
+    vertical-align: top;
+    width: 90%;
+    border-collapse: collapse;
+    margin-top: 3px;
+    box-sizing: border-box;
+    margin-bottom: 1rem;
+    color: rgb(33, 37, 41);
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 8px;
+    overflow-x: hidden;
+    overflow-y: hidden;
+  }
+ 
+div.table-responsive.rounded-1 thead.bg-dark {
+    box-sizing: border-box;
+    background-color: rgb(70, 69, 69);
+    color: rgb(255, 255, 255);
+    text-align: left;
+  }
+ 
+div.table-responsive.rounded-1 tr {
+    box-sizing: border-box;
+  }
+ 
+div.table-responsive.rounded-1 th {
+    font-weight: bold;
+    font-size: 14px;
+    text-align: left;
+    min-height: 24px;
+    box-sizing: border-box;
+    padding-top: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    vertical-align: bottom;
+    border-top-width: 1px;
+    border-top-style: solid;
+    border-top-color: rgb(222, 226, 230);
+    border-bottom-width: 2px;
+    border-bottom-style: solid;
+    border-bottom-color: rgb(222, 226, 230);
+    text-transform: uppercase;
+  }
+ 
+div.table-responsive.rounded-1 a {
+    color: rgb(255, 255, 255);
+    text-decoration-line: none;
+    text-decoration-thickness: initial;
+    text-decoration-style: initial;
+    text-decoration-color: initial;
+    display: block;
+    box-sizing: border-box;
+    background-color: transparent;
+    padding-top: 5px;
+    padding-right: 5px;
+    padding-bottom: 5px;
+    padding-left: 5px;
+    transition-behavior: normal;
+    transition-duration: 0.3s;
+    transition-timing-function: ease;
+    transition-delay: 0s;
+    transition-property: color;
+  }
+ 
+div.table-responsive.rounded-1 a.asc {
+    color: rgb(255, 255, 255);
+    text-decoration-line: none;
+    text-decoration-thickness: initial;
+    text-decoration-style: initial;
+    text-decoration-color: initial;
+    display: block;
+    box-sizing: border-box;
+    background-color: transparent;
+    padding-top: 5px;
+    padding-right: 5px;
+    padding-bottom: 5px;
+    padding-left: 5px;
+    transition-behavior: normal;
+    transition-duration: 0.3s;
+    transition-timing-function: ease;
+    transition-delay: 0s;
+    transition-property: color;
+  }
+ 
+div.table-responsive.rounded-1 tbody {
+    box-sizing: border-box;
+    background-color: rgb(249, 249, 249);
+  }
+ 
+div.table-responsive.rounded-1 tr.table-active {
+    box-sizing: border-box;
+    background-color: rgba(0, 0, 0, 0.075);
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: rgb(221, 221, 221);
+    transition-behavior: normal;
+    transition-duration: 0.3s;
+    transition-timing-function: ease;
+    transition-delay: 0s;
+    transition-property: background-color;
+  }
+  
+div.table-responsive.rounded-1 td.nohover {
+    padding-top: 12px;
+    padding-right: 15px;
+    padding-bottom: 12px;
+    padding-left: 15px;
+    background-color: rgba(0, 0, 0, 0.075);
+    box-sizing: border-box;
+    vertical-align: top;
+    border-top-width: 1px;
+    border-top-style: solid;
+    border-top-color: rgb(222, 226, 230);
+    font-size: 14px;
+  }
+ 
+div.table-responsive.rounded-1 input.ckb {
+    padding-top: 0px;
+    padding-right: 0px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+    font-size: inherit;
+    font-family: inherit;
+    background-image: initial;
+    background-position-x: initial;
+    background-position-y: initial;
+    background-size: initial;
+    background-repeat: initial;
+    background-attachment: initial;
+    background-origin: initial;
+    background-clip: initial;
+    background-color: rgb(255, 255, 255);
+    border-top-width: 1px;
+    border-right-width: 1px;
+    border-bottom-width: 1px;
+    border-left-width: 1px;
+    border-top-style: solid;
+    border-right-style: solid;
+    border-bottom-style: solid;
+    border-left-style: solid;
+    border-top-color: rgb(187, 187, 187);
+    border-right-color: rgb(187, 187, 187);
+    border-bottom-color: rgb(187, 187, 187);
+    border-left-color: rgb(187, 187, 187);
+    border-image-source: initial;
+    border-image-slice: initial;
+    border-image-width: initial;
+    border-image-outset: initial;
+    border-image-repeat: initial;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    border-bottom-left-radius: 4px;
+    width: 1em;
+    height: 1em;
+    box-sizing: border-box;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    vertical-align: middle;
+    position: relative;
+    top: -0.05em;
+    line-height: inherit;
+    overflow-x: visible;
+    overflow-y: visible;
+    cursor: pointer;
+    transform: scale(1.2);
+    transition-behavior: normal;
+    transition-duration: 0.3s;
+    transition-timing-function: ease;
+    transition-delay: 0s;
+    transition-property: transform;
+  }
+ 
+div.table-responsive.rounded-1 td {
+    padding-top: 12px;
+    padding-right: 15px;
+    padding-bottom: 12px;
+    padding-left: 15px;
+    background-color: rgba(0, 0, 0, 0.075);
+    box-sizing: border-box;
+    vertical-align: top;
+    border-top-width: 1px;
+    border-top-style: solid;
+    border-top-color: rgb(222, 226, 230);
+    font-size: 14px;
+  }
+ 
+div.table-responsive.rounded-1 a.preview {
+    color: rgb(0, 123, 255);
+    text-decoration-line: none;
+    text-decoration-thickness: initial;
+    text-decoration-style: initial;
+    text-decoration-color: initial;
+    display: inline-block;
+    box-sizing: border-box;
+    background-color: transparent;
+  }
+ 
+div.table-responsive.rounded-1 b {
+    box-sizing: border-box;
+    font-weight: bolder;
+  }
+ 
+div.table-responsive.rounded-1 span.Icon.staffAssigned {
+    width: auto;
+    padding-left: 20px;
+    background-position-x: left;
+    background-position-y: center;
+    background-repeat: no-repeat;
+    min-height: 16px;
+    display: inline-block;
+    vertical-align: middle;
+    background-image: url("../images/icons/user.gif");
+    box-sizing: border-box;
+  }
+ 
+div.table-responsive.rounded-1 tfoot {
+    box-sizing: border-box;
+  }
+ 
+div.table-responsive.rounded-1 td {
+    background-image: initial;
+    background-position-x: initial;
+    background-position-y: initial;
+    background-size: initial;
+    background-repeat: initial;
+    background-attachment: initial;
+    background-origin: initial;
+    background-clip: initial;
+    background-color: rgb(255, 255, 255);
+    padding-top: 15px;
+    padding-right: 15px;
+    padding-bottom: 15px;
+    padding-left: 15px;
+    box-sizing: border-box;
+    vertical-align: top;
+    border-top-width: 1px;
+    border-top-style: solid;
+    border-top-color: rgb(222, 226, 230);
+    text-align: left;
+    font-size: 14px;
+    color: rgb(119, 119, 119);
+  }
+ 
+div.table-responsive.rounded-1 a {
+    color: rgb(0, 123, 255);
+    text-decoration-line: none;
+    text-decoration-thickness: initial;
+    text-decoration-style: initial;
+    text-decoration-color: initial;
+    display: inline-block;
+    box-sizing: border-box;
+    background-color: transparent;
+    margin-top: 0px;
+    margin-right: 10px;
+    margin-bottom: 0px;
+    margin-left: 10px;
+  }
+>>>>>>> Stashed changes

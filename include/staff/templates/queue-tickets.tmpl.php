@@ -226,6 +226,7 @@ if ($queue->id > 0 && $queue->isOwner($thisstaff)) { ?>
 <?php csrf_token(); ?>
  <input type="hidden" name="a" value="mass_process" >
  <input type="hidden" name="do" id="action" value="" >
+<<<<<<< Updated upstream
  <div class="table-responsive">
     <table class="table list queue tickets" border="0" cellspacing="1" cellpadding="2" width="940">
         <thead class="bg-dark">
@@ -235,6 +236,48 @@ if ($queue->id > 0 && $queue->isOwner($thisstaff)) { ?>
         if ($canManageTickets) { ?>
                 <th scope="col" style="width:12px"></th>
         <?php
+=======
+
+<table class="table table-striped table-hover list" border="0" cellspacing="1" cellpadding="2">
+  <thead class="bg-dark">
+    <tr>
+<?php
+$canManageTickets = $thisstaff->canManageTickets();
+if ($canManageTickets) { ?>
+        <th style="width:12px"></th>
+<?php
+}
+
+foreach ($columns as $C) {
+    $heading = Format::htmlchars($C->getLocalHeading());
+    if ($C->isSortable()) {
+        $args = $_GET;
+        $dir = $sort['col'] != $C->id ?: ($sort['dir'] ? 'desc' : 'asc');
+        $args['dir'] = $sort['col'] != $C->id ?: (int) !$sort['dir'];
+        $args['sort'] = $C->id;
+        $heading = sprintf('<a href="?%s" class="%s">%s</a>',
+            Http::build_query($args), $dir, $heading);
+    }
+    echo sprintf('<th width="%s" data-id="%d">%s</th>',
+        $C->getWidth(), $C->id, $heading);
+}
+?>
+    </tr>
+  </thead>
+  <tbody>
+<?php
+foreach ($tickets as $T) {
+    echo '<tr>';
+    if ($canManageTickets) { ?>
+        <td><input type="checkbox" class="ckb" name="tids[]"
+            value="<?php echo $T['ticket_id']; ?>" /></td>
+<?php
+    }
+    foreach ($columns as $C) {
+        list($contents, $styles) = $C->render($T);
+        if ($style = $styles ? 'style="'.$styles.'"' : '') {
+            echo "<td $style><div $style>$contents</div></td>";
+>>>>>>> Stashed changes
         }
 
         foreach ($columns as $C) {
