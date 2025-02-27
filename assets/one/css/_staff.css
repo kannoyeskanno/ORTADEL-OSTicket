@@ -7,7 +7,7 @@ div#pjax-container {
     justify-content: flex-start;
     padding: 0;
     margin-left: 0;
-    background-color: #E4E4E4;
+    background-color: #ffff;
 
     
 
@@ -29,6 +29,32 @@ div#pjax-container {
     padding: .6rem;
     border-bottom: solid .6px #E4E4E4;
 }
+
+.jb-overflowmenu {
+    width: 100%;
+}
+
+@media (max-width: 767px) {
+    #sub_nav {
+        /* background-color: red; */
+        
+    }
+    
+}
+
+
+
+ul#sub_nav a.active,
+ul#sub_nav a:hover,
+a#subnav0.teams.active, 
+a#subnav1:hover,
+ul#sub_nav a:hover
+{
+    color: #0A58CA  !important;
+}
+
+
+
 
 #logout a{
     background-color: white;
@@ -77,10 +103,15 @@ div#pjax-container {
 
 .navbar-nav li.active {
     background-color: #fff;
-    color: #1D2329;
+    color: #0A58CA;
     font-weight: bold;
+    box-shadow: inset 0 4px 12px -10px black;
+    border-bottom: solid #0A58CA;
 }
 
+li.nav-item.active span#tab-icon {
+    color: #0A58CA !important;
+  }
 
 
 .navbar-nav {
@@ -156,3 +187,123 @@ div#pjax-container {
     }
 }
 
+
+
+
+#content {
+    padding: 1rem 2rem ;
+    background-color: #ffff;
+}
+
+
+
+/* tickets */
+
+form#tickets {
+    width: 100%;
+    padding: 1rem;
+    background: #ffff;
+    box-shadow: inset 0 4px 12px -10px black;
+
+}
+
+table.list.queue.tickets {
+    width: 100%;
+}
+
+
+
+
+/* dashboard */
+
+
+
+
+table.list {
+    width: 100%;
+}
+
+
+table.table.two-column {
+    overflow: auto;
+    max-height: 62vh;
+    display: block;
+    width: 100%;
+  }
+  table.table.two-column > tbody {
+    overflow: visible;
+    max-height: none;
+    display: table-row-group;
+  }
+  table.table.two-column > tbody > tr {
+    display: table-row;
+    width: auto;
+  }
+
+
+
+@media (max-width: 767px) {
+    
+#topic {
+    overflow: auto;
+    max-width: 100%;
+    display: block;
+    position: relative;
+  }
+
+  #dept {
+    overflow: auto;
+    max-width: 100%;
+    display: block;
+    position: relative;
+  }
+  
+  
+  .table.table-striped.table-hover.dashboard-stats.table {
+    width: 100%;
+    max-width: 100%;
+    min-width: fit-content;
+    box-sizing: border-box;
+    display: table;
+  }
+
+  #ui-datepicker-div {
+    width: 100%;
+    left: 0;
+    right: 0;
+    overflow: auto;
+  }
+
+  div#content > table.table.table-striped.table-hover.list {
+    display: block;
+    width: 100%;
+    overflow: auto;
+    max-height: 400px;
+  }
+  
+    /* table.list {
+        max-width: 100vw;
+    } */
+
+    ul.clean.tabs {
+        display: flex;
+        flex-wrap: wrap;
+        flex: 1;
+        background-color: red;
+    }
+    ul.clean.tabs li {
+        max-width: 20px;
+    }
+}
+
+
+
+
+
+
+/* login */
+
+
+#poweredBy {
+    display: none;
+  }
