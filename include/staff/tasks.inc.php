@@ -323,11 +323,12 @@ if ($thisstaff->hasPerm(Task::PERM_DELETE, false)) {
  <input type="hidden" name="do" id="action" value="" >
  <input type="hidden" name="status" value="<?php echo
  Format::htmlchars($_REQUEST['status'], true); ?>" >
- <table class="list" border="0" cellspacing="1" cellpadding="2" width="940">
+ <div id="task-table-container">
+ <table id="tasks-table" class="table table-striped table-hover list" border="0" cellspacing="1" cellpadding="2" width="940">
     <thead>
         <tr>
             <?php if ($thisstaff->canManageTickets()) { ?>
-	        <th width="4%">&nbsp;</th>
+	        <th class="bg-dark" width="4%">&nbsp;</th>
             <?php } ?>
 
             <?php
@@ -336,7 +337,7 @@ if ($thisstaff->hasPerm(Task::PERM_DELETE, false)) {
             $qstr = Http::build_query($args);
             // Show headers
             foreach ($queue_columns as $k => $column) {
-                echo sprintf( '<th width="%s"><a href="?sort=%s&dir=%s&%s"
+                echo sprintf( '<th class="bg-dark" width="%s"><a class="text-light" href="?sort=%s&dir=%s&%s"
                         class="%s">%s</a></th>',
                         $column['width'],
                         $column['sort'] ?: $k,
@@ -447,6 +448,7 @@ if ($thisstaff->hasPerm(Task::PERM_DELETE, false)) {
      </tr>
     </tfoot>
     </table>
+ </div>
     <?php
     if ($total>0) { //if we actually had any tasks returned.
         echo '<div>&nbsp;'.__('Page').':'.$pageNav->getPageLinks().'&nbsp;';
