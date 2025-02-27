@@ -5,7 +5,7 @@
  */
 
 $title = ($cfg && is_object($cfg) && $cfg->getTitle())
-    ? $cfg->getTitle() : 'osTicket :: ' . __('Support Ticket System');
+    ? $cfg->getTitle() : 'ORTADEL :: ' . __('Support Ticket System');
 $signin_url = ROOT_PATH . "login.php"
     . ($thisclient ? "?e=" . urlencode($thisclient->getEmail()) : "");
 $signout_url = ROOT_PATH . "logout.php?auth=" . $ost->getLinkToken();
@@ -72,8 +72,8 @@ if (osTicket::is_ie()) {
     <link type="text/css" rel="stylesheet" href="<?php echo ROOT_PATH; ?>css/select2.min.css?cb6766e"/>
 
     <!-- Favicons -->
-    <link rel="icon" type="image/png" href="<?php echo ROOT_PATH ?>images/oscar-favicon-32x32.png" sizes="32x32"/>
-    <link rel="icon" type="image/png" href="<?php echo ROOT_PATH ?>images/oscar-favicon-16x16.png" sizes="16x16"/>
+    <link rel="icon" type="image/png" href="<?php echo ROOT_PATH ?>images/ORTADEL_logo.png" sizes="32x32"/>
+    <link rel="icon" type="image/png" href="<?php echo ROOT_PATH ?>images/ORTADEL_logo.png" sizes="16x16"/>
     <script type="text/javascript" src="<?php echo ROOT_PATH; ?>js/jquery-3.5.1.min.js?cb6766e"></script>
     <script type="text/javascript" src="<?php echo ROOT_PATH; ?>js/jquery-ui-1.12.1.custom.min.js?cb6766e"></script>
     <script type="text/javascript" src="<?php echo ROOT_PATH; ?>js/jquery-ui-timepicker-addon.js?cb6766e"></script>
