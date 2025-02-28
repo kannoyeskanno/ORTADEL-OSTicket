@@ -262,6 +262,7 @@ div.table-responsive.rounded-1 thead.bg-dark {
     background-color: rgb(70, 69, 69);
     color: rgb(255, 255, 255);
     text-align: left;
+<<<<<<< Updated upstream
   }
  
 div.table-responsive.rounded-1 tr {
@@ -271,6 +272,20 @@ div.table-responsive.rounded-1 tr {
 div.table-responsive.rounded-1 th {
     font-weight: bold;
     font-size: 14px;
+=======
+}
+
+#task-table {
+    border-radius: .6rem;
+}
+
+table#task-table {
+    border-top: 20px;
+}
+#task-table thead,
+#task-user thead,
+#task-table th a{
+>>>>>>> Stashed changes
     text-align: left;
     min-height: 24px;
     box-sizing: border-box;
