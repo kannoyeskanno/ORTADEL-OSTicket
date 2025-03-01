@@ -41,7 +41,7 @@ if(is_object($thisstaff) && $thisstaff->isStaff()) { ?>
     <div class="clear"></div>
 </div>
 
-<!--  -->
+
 
 <script type="text/javascript" src="<?php echo ROOT_PATH; ?>js/jquery.pjax.js"></script>
 <script type="text/javascript" src="<?php echo ROOT_PATH; ?>js/bootstrap-typeahead.js"></script>
