@@ -1,6 +1,6 @@
 - Logo - Top Left fixed ---------------------------------------------------(done)
-- Welcome sa baba
-- Align bullets to header (Footer)
+- Welcome sa baba ---------------------------------------------------------(done)
+- Align bullets to header (Footer) ----------------------------------------(done)
 - Spacing Logo to "Open New Ticket" (Open a New Ticket)
 - Format of Textbox
 - Spacing of Main Content

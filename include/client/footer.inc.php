@@ -14,7 +14,7 @@
 
 
     <footer id="footer" class="py-2">
-  <div class="container pt-md-4">
+  <div class="container pt-md-4 mx-auto">
       <div class="row">
           <div class="col-12 col-md-8 col-lg-4 mb-4">
               <h6 class="px-2">Contact Info</h6>
