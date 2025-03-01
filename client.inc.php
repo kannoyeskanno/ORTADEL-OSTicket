@@ -41,7 +41,7 @@ define('CLIENTINC_DIR', INCLUDE_DIR . 'client/');
 define('OSTCLIENTINC', TRUE);
 
 define('ASSETS_PATH', ROOT_PATH . 'assets/default/');
-define('ASSETS_ONE_PATH', ROOT_PATH . 'assets/one/');
+define('ASSETS_ONE_PATH', ROOT_PATH . 'assets/override/');
 
 // Check the status of the HelpDesk.
 if (!in_array(strtolower(basename($_SERVER['SCRIPT_NAME'])), ['logo.php', 'file.php'])

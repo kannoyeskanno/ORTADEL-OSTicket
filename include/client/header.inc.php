@@ -56,7 +56,7 @@ if (osTicket::is_ie()) {
 
 
     <link rel="stylesheet" href="<?php echo ROOT_PATH; ?>css/osticket.css?cb6766e" media="screen"/>
-    <link rel="stylesheet" href="<?php echo ASSETS_ONE_PATH; ?>css/theme.css?cb6766e" media="screen"/>
+    <link rel="stylesheet" href="<?php echo ASSETS_ONE_PATH; ?>css/css_override.css?cb6766e" media="screen"/>
     <link rel="stylesheet" href="<?php echo ASSETS_PATH; ?>css/print.css?cb6766e" media="print"/>
     <link rel="stylesheet" href="<?php echo ROOT_PATH; ?>scp/css/typeahead.css?cb6766e"
           media="screen"/>
