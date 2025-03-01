@@ -47,7 +47,7 @@ if ($info['topicId'] && ($topic = Topic::lookup($info['topicId']))) {
 <p><?php echo __('Please fill in the form below to open a new ticket.'); ?></p>
 <form id="ticketForm" method="post" action="open.php" enctype="multipart/form-data">
     <?php csrf_token(); ?>
-    <input type="hidden" name="a" value="open">
+    <!-- <input type="hidden" name="a" value="open"> -->
     <table class="table" cellpadding="1" cellspacing="0" border="0">
         <tbody>
         <?php
@@ -66,7 +66,7 @@ if ($info['topicId'] && ($topic = Topic::lookup($info['topicId']))) {
             </tr>
             <tr>
                 <td><?php echo __('Email'); ?>:</td>
-                <td><?php
+                <td class="bg-dark"><?php
                 echo $thisclient->getEmail(); ?></td>
             </tr>
             <tr>
@@ -146,9 +146,9 @@ if ($info['topicId'] && ($topic = Topic::lookup($info['topicId']))) {
     </table>
     <hr/>
     <p class="buttons" style="text-align:center;">
-        <input class="btn btn-primary btn-sm" type="submit" value="<?php echo __('Create Ticket'); ?>">
-        <input class="btn btn-secondary btn-sm type=" reset" name="reset" value="<?php echo __('Reset'); ?>">
-        <input class="btn btn-danger btn-sm" type="button" name="cancel" value="<?php echo __('Cancel'); ?>" onclick="javascript:
+        <input id="new-ticket-client-actions" class=" p-2 btn btn-primary btn-sm" type="submit" value="<?php echo __('Create Ticket'); ?>">
+        <input id="new-ticket-client-actions" class=" p-2 btn btn-secondary btn-sm type=" reset" name="reset" value="<?php echo __('Reset'); ?>">
+        <input id="new-ticket-client-actions" class=" p-2 btn btn-danger btn-sm" type="button" name="cancel" value="<?php echo __('Cancel'); ?>" onclick="javascript:
             $('.richtext').each(function() {
                 var redactor = $(this).data('redactor');
                 if (redactor && redactor.opts.draftDelete)

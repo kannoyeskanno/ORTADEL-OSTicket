@@ -1013,7 +1013,7 @@ span.required {
   table-layout: fixed;
 }
 #ticketForm > table td {
-  width: 160px;
+  /* width: 160px; */
 }
 #ticketForm > table td + td {
   width: auto;
@@ -2336,7 +2336,7 @@ table.table tbody {
 }
 
 table.table tbody tr {
-  border-bottom: 1px solid #ddd;
+  /* border-bottom: 1px solid #ddd; */
   transition: background-color 0.3s ease;
 }
 
@@ -2345,6 +2345,7 @@ table.table tbody tr:hover {
 }
 
 table.table tbody td {
+  width: 100%;
   padding: 12px 15px;
   font-size: 14px;
   vertical-align: left;
@@ -2572,9 +2573,108 @@ li.nav-item a.active {
 /* ========== */
 
 
-/* =========== */
-/* Client Home */
-/* =========== */
+/* =========================== */
+/* Open New Ticket Client Page */
+/* =========================== */
+
+
 .search-area.container {
   padding-top: 10px;
+}
+
+td label span {
+  width: 100%;
+}
+
+#ticketForm textarea, #ticketForm td label input {
+
+  border-radius: .3em;
+  border: solid lightgray .3px;
+  box-shadow: inset 0px 3px 12px -10px gray;
+}
+
+#ticketForm td label input {
+   padding: .5rem;
+  margin-top: 1rem;
+  
+}
+
+#ticketForm td label input:focus,
+#ticketForm textarea:focus{
+  outline: 2px solid lightblue  
+}
+
+
+
+#new-ticket-client-actions {
+  width: 200px;  
+  padding: 1rem; 
+  text-align: center;
+  display: inline-block; 
+   box-sizing: border-box; 
+
+}
+
+#ticketForm button, 
+#new-ticket-client-actions button {
+  width: 200px;  
+  padding: 1rem;
+  text-align: center;
+  display: inline-block; 
+  box-sizing: border-box; 
+  margin-bottom: 1rem;
+}
+
+#ticketForm table.table span {
+  font-weight: 200;
+}
+
+#ticketForm table.table tr, table.table td{
+  border-bottom: none;
+  border-style: none;
+}
+
+#ticketForm table td {
+  width: 100%;
+}
+
+
+@media (max-width: 767px) {
+
+  #ticketForm textarea, #ticketForm td label input {
+
+    border-radius: .3em;
+    border: solid lightgray .3px;
+    box-shadow: inset 0px 3px 12px -10px gray;
+    width: 100%;
+    padding: 0;
+  }
+
+  #ticketForm td label input {
+    padding: .5rem;
+    
+    
+  }
+
+
+  #ticketForm button {
+  width: 200px;  
+  padding: 1rem;
+  background-color: red;
+  text-align: center;
+  display: inline-block; 
+  box-sizing: border-box;
+  display: flex; 
+}
+
+
+  #ticketForm table.table {
+    width: 100%;
+    padding: 0  ;
+  }
+
+  #footer {
+    padding-top: 1rem;
+  }
+
 }
