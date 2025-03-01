@@ -70,10 +70,13 @@ if (osTicket::is_ie())
     <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet"> -->
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="<?php echo ROOT_PATH; ?>/assets/one/css/_staff.css?" media="screen"/>
-    <link rel="stylesheet" href="<?php echo ROOT_PATH; ?>/assets/one/css/staff_users.css?" media="screen"/>
+    <!-- <link rel="stylesheet" href="<?php echo ROOT_PATH; ?>/assets/one/css/_staff.css?" media="screen"/> -->
+    <!-- <link rel="stylesheet" href="<?php echo ROOT_PATH; ?>/assets/one/css/staff_users.css?" media="screen"/>
     <link rel="stylesheet" href="<?php echo ROOT_PATH; ?>/assets/one/css/staff_task.css?" media="screen"/>
-    <link rel="stylesheet" href="<?php echo ROOT_PATH; ?>/assets/one/css/staff_tickets.css?" media="screen"/>
+    <link rel="stylesheet" href="<?php echo ROOT_PATH; ?>/assets/one/css/staff_tickets.css?" media="screen"/> -->
+
+    <link rel="stylesheet" href="<?php echo ROOT_PATH; ?>/assets/override/css/css_override.css?" media="screen"/> 
+
 
    
   
