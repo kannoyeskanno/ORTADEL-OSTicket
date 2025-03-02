@@ -633,13 +633,15 @@ body {
 
 
 #header {
-  position: relative;
+  position: sticky;
   height: 71px;
   padding: 0 0 0 20em;
   width: 100%;
   background: #fff;
   
 }
+
+
 
 
 
@@ -1775,13 +1777,6 @@ div#content {
   width: 100%;
 }
 
-@media (max-width: 767px) {
-  #sub_nav {
-      /* background-color: red; */
-      
-  }
-  
-}
 
 
 
@@ -2439,7 +2434,7 @@ table.table tfoot td a:hover {
 
 /* DASHBOARD */
 
-.action-button,
+/* .action-button,
 .button {
   cursor: pointer;
   box-sizing: content-box;
@@ -2466,7 +2461,7 @@ table.table tfoot td a:hover {
       user-select: none;
 -webkit-transition: opacity 0.1s ease, background-color 0.1s ease, box-shadow 0.1s ease, color 0.1s ease, background 0.1s ease;
       transition: opacity 0.1s ease, background-color 0.1s ease, box-shadow 0.1s ease, color 0.1s ease, background 0.1s ease;
-}
+} */
 
 /* ticket table css */
 
@@ -2582,9 +2577,11 @@ ul.nav.pull-right li.nav-item a.active {
   padding-top: 10px;
 }
 
-td label span {
+/* td label span {
   width: 100%;
-}
+} */
+
+
 input,
 table.padded td select,
 table.padded td label input,
@@ -2696,14 +2693,10 @@ table.padded,
 }
 
 
-.nav-container#navbarNav#navbar-nav {
-  padding: 0px;
-  margin: 0;
-  margin-top: 0;
-  
-}
 
-.nav-item a {
+
+
+.nav-container .nav-item a {
   font-size: 1px;
   font-weight: 10;
 }
@@ -2747,22 +2740,75 @@ table.padded,
 
 }
 
-#new-div {
-  display: none;
-}
+
+
+
 
 
 #sub_nav {
   padding: 1.5rem 1rem;
-  margin-left: 1rem;
   display: flex;
   justify-content: start;
   align-items: center;
+  
+
 }
 
 #sub_nav li a {
-  font-size: 1rem;
+  font-size: 14px;
   font-size: 20;
   font-style: normal;
   gap: 1rem;
+} 
+#new-div {
+  display: none;
+} 
+
+
+#pjax-container {
+  min-height: 100vh;
+}
+
+
+
+
+
+/* User Table */
+
+
+#user-table,
+#task-table,
+#tickets-table
+{
+  width: 100%;
+  table-layout: fixed; 
+}
+
+
+#main-tabs a {
+  font-size: 14px !important; 
+}
+
+
+#pjax-container {
+  max-height: 100vh; /* Prevent vertical overflow */
+  overflow-y: auto;  /* Enable vertical scrolling */
+  display: block; /* Ensures it respects width/height */
+}
+
+
+
+
+
+
+/* Admin */
+
+#warning_bar {
+  z-index: 199;
+  height: 2rem;
+}
+
+
+#content {
+  border: none;
 }

@@ -81,11 +81,13 @@ if ($num) { ?>
  <input type="hidden" name="do" value="mass_process" >
  <input type="hidden" id="id" name="id" value="<?php echo $org->getId(); ?>" >
  <input type="hidden" id="action" name="a" value="" >
- <table class="list" border="0" cellspacing="1" cellpadding="0" width="940">
+ 
+
+ <table class="table table-striped table-hover w-100" border="0" cellspacing="1" cellpadding="0">
     <thead>
         <tr>
-            <th width="4%">&nbsp;</th>
-            <th width="30%"><?php echo __('Name'); ?></th>
+            <th class="check-box-head" width="4%">&nbsp;</th>
+            <th width="50%"><?php echo __('Name'); ?></th>
             <th width="33%"><?php echo __('Email'); ?></th>
             <th width="18%"><?php echo __('Status'); ?></th>
             <th width="15%"><?php echo __('Created'); ?></th>
@@ -151,6 +153,8 @@ if ($num) { ?>
      </tr>
     </tfoot>
 </table>
+
+
 <?php
 if ($res && $num) { //Show options..
     echo '<div>&nbsp;'.__('Page').':'.$pageNav->getPageLinks().'&nbsp;</div>';
