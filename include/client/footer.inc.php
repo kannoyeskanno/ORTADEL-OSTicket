@@ -20,7 +20,7 @@
               <h6 class="px-2">Contact Info</h6>
               <p class="mb-2 px-2 text-sc pe-xl-5">Address :  Unit 114, 2nd Floor, Corinthian Executive Regency, Ortigas Ave., Brgy. San Antonio, Pasig City
               </p>
-              <p class="mb-2 px-2 text-sc">Phone Number : 09952312039/277385555</p>
+              <p class="mb-2 px-2 text-sc">Phone Number : 09*********/277385555</p>
               <p class="mb-2 px-2 text-sc">Email : <a href="mailto:inquiries@ortadeltech.com" class="text-decoration-none text-light">inquiries@ortadeltech.com</a></p>
           </div>
           <div class="col-12 col-md-4 col-lg-2 mt-md-0 mt-4 mb-4">

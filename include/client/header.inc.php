@@ -112,7 +112,7 @@ if (osTicket::is_ie()) {
 <body>
 <?php
 if ($nav) { ?>
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="background-color: #fff !important; position: sticky; top: 0; z-index: 1000;">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="position: sticky; top: 0; z-index: 1000;">
 
     <div class="container">
         <a class="navbar-brand" href="#"></a>
@@ -121,9 +121,9 @@ if ($nav) { ?>
         <a href="https://ortadeltech.com" class="nav-brand flex-shrink-0 text-decoration-none d-none d-md-flex border-b-none mb-0 ms-3 flex-row align-items-center" style="width: 400px;">
                   <img src="https://ortadeltech.com/assets/images/ORTADEL_logo.png" width="55" style="margin-right: .8rem;" alt="logo">
                   <span class="ml-2">
-                      <h1 class="h3 m-0 ls-1 text-decoration-none">ORTADEL</h1>
-                      <small>Technologies Corporation</small>
-                      <small class="d-flex" style="font-size:11px"><i>"Your trusted partner for innovation and IT Solutions"</i></small>
+                      <h1 class="text-light h3 m-0 ls-1 text-decoration-none">ORTADEL</h1>
+                      <small class="text-light">Technologies Corporation</small>
+                      <small class="text-light d-flex" style="font-size:11px"><i>"Your trusted partner for innovation and IT Solutions"</i></small>
                   </span>
               </a>
 
@@ -299,8 +299,10 @@ else { ?>
             if ($cfg->getClientRegistrationMode() == 'public') {
                 echo __('Guest');
             }
-        }
+        }        
         ?>
+
+        !
     </p>
 </div>
         

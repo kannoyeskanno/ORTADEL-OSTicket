@@ -2509,12 +2509,13 @@ nav.navbar.navbar-expand-lg.navbar-dark.bg-dark > .container {
 
 ul.nav.pull-right li.nav-item a {
   border-radius: 2rem;
+  color: white !important;
 
 }
 
 ul.nav.pull-right li.nav-item a:hover {
-  background-color: #1D2329 !important;
-  color: white !important;
+  background-color: #E4E4E4 !important;
+  color: #1D2329 !important;
 }
 
 
@@ -2524,7 +2525,7 @@ ul.nav.pull-right li.nav-item a:hover::after {
 }
 
 ul.nav.pull-right li.nav-item a.active {
-  color: #0A58CA !important;  
+  color: #E4E4E4 !important;  
   display: inline-block;
   box-shadow: 0px 4px 3px rgba(0, 0, 0, 0.3) !important; 
   padding: 5px 10px; 
@@ -2564,8 +2565,17 @@ ul.nav.pull-right li.nav-item a.active {
 }
 }
 
-/* ========== */
-/* ========== */
+/* ================================ */
+/* Account registration client page */
+/* ================================ */
+form table {
+  width: 100%;
+}
+
+form table tbody {
+  width: 100%;
+}
+
 
 
 /* =========================== */
@@ -2576,6 +2586,8 @@ ul.nav.pull-right li.nav-item a.active {
 .search-area.container {
   padding-top: 10px;
 }
+
+
 
 /* td label span {
   width: 100%;
@@ -2615,6 +2627,40 @@ table.padded td label input:focus,
    box-sizing: border-box; 
 
 }
+
+#user-top-bar {
+  width: 100%;
+
+}
+
+/* #user-top-bar div h2{
+  font-size: 2rem !important;
+
+} */
+
+h2{
+  font-size: 1.4rem !important;
+
+}
+
+
+
+#user-actions-btn a,
+#user-actions-btn span{
+  /* justify-content: center; */
+  /* text-align: center; */
+  padding: .3em;
+  justify-content: center;
+}
+
+
+
+
+
+
+
+
+
 table.padded,
 #ticketForm button, 
 #new-ticket-client-actions button {
@@ -2692,10 +2738,6 @@ table.padded,
   align-items: center;
 }
 
-
-
-
-
 .nav-container .nav-item a {
   font-size: 1px;
   font-weight: 10;
@@ -2705,27 +2747,19 @@ table.padded,
   padding: none;
 }
 
-
-
 #main-tabs {
   padding: .1em 1rem;
 }
 
-
 .navbar-nav {
   margin-top: 0;
-  padding: 0 1rem;
+  padding: 0 2rem;
 }
-
-
 
 #tab-icon svg {
   fill: #1D2329;  
   transition: fill 0.3s ease;  
 }
-
-
-
 
 .nav-item.active #tab-icon svg {
   fill: #0A58CA ;  
@@ -2746,11 +2780,10 @@ table.padded,
 
 
 #sub_nav {
-  padding: 1.5rem 1rem;
+  padding: 1.5rem 2.6rem;
   display: flex;
   justify-content: start;
   align-items: center;
-  
 
 }
 
@@ -2759,6 +2792,7 @@ table.padded,
   font-size: 20;
   font-style: normal;
   gap: 1rem;
+
 } 
 #new-div {
   display: none;
@@ -2791,9 +2825,9 @@ table.padded,
 
 
 #pjax-container {
-  max-height: 100vh; /* Prevent vertical overflow */
-  overflow-y: auto;  /* Enable vertical scrolling */
-  display: block; /* Ensures it respects width/height */
+  max-height: 100vh; 
+  overflow-y: auto; 
+  display: block; 
 }
 
 
@@ -2811,4 +2845,69 @@ table.padded,
 
 #content {
   border: none;
+}
+
+
+/* Search boxes */
+
+div.attached.input.focus {
+  /* border: none; */
+  outline-style: none;
+}
+#basic_search p-1 {
+  background-color: red;
+}
+
+
+
+
+/* Datepicker 2 col */
+
+.ui-datepicker-calendar {
+  width: 200px;
+  table-layout: fixed;
+}
+
+.ui-datepicker-calendar th,
+.ui-datepicker-calendar td {
+  width: calc(200px / 7);
+  height: 28px;
+  text-align: center;
+}
+
+.ui-datepicker-calendar a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  line-height: 28px; 
+  text-decoration: none;
+}
+
+
+
+
+.ui-datepicker-header.ui-widget-header.ui-helper-clearfix.ui-corner-left, 
+
+.ui-datepicker-header.ui-widget-header.ui-helper-clearfix.ui-corner-right  {
+  background-color: #1D2329;
+  border: solid #1D2329;
+  background-image: none;
+}
+
+
+
+.ui-datepicker-header.ui-widget-header.ui-helper-clearfix.ui-corner-left td a:hover, 
+.ui-datepicker-header.ui-widget-header.ui-helper-clearfix.ui-corner-right td a:hover {
+  background-color: #1D2329;
+  border: solid #1D2329;
+  background-image: none;
+}
+
+
+.help-tip.icon-question-sign:hover {
+  background-color: #1D2329;
+
+}
+nav.navbar.navbar-expand-lg.navbar-dark.bg-dark {
+ background-color: #1D2329;
 }

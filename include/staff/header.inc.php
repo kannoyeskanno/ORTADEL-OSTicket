@@ -65,16 +65,9 @@ if (osTicket::is_ie())
     <!-- Favicons -->
     <link rel="icon" type="image/png" href="<?php echo ROOT_PATH ?>images/oscar-favicon-32x32.png" sizes="32x32" />
     <link rel="icon" type="image/png" href="<?php echo ROOT_PATH ?>images/oscar-favicon-16x16.png" sizes="16x16" />
-    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"> -->
     <link href="<?php echo ROOT_PATH ?>/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet"> -->
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <!-- <link rel="stylesheet" href="<?php echo ROOT_PATH; ?>/assets/one/css/_staff.css?" media="screen"/> -->
-    <!-- <link rel="stylesheet" href="<?php echo ROOT_PATH; ?>/assets/one/css/staff_users.css?" media="screen"/>
-    <link rel="stylesheet" href="<?php echo ROOT_PATH; ?>/assets/one/css/staff_task.css?" media="screen"/>
-    <link rel="stylesheet" href="<?php echo ROOT_PATH; ?>/assets/one/css/staff_tickets.css?" media="screen"/> -->
-
     <link rel="stylesheet" href="<?php echo ROOT_PATH; ?>/assets/override/css/css_override.css?" media="screen"/> 
 
 

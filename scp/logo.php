@@ -34,6 +34,6 @@ elseif (($logo = $ost->getConfig()->getStaffLogo())) {
 
 header("Cache-Control: private, max-age=$ttl");
 header('Pragma: private');
-Http::redirect('images/login-logo.png');
+Http::redirect('images/ost-logo.png');
 
 ?>

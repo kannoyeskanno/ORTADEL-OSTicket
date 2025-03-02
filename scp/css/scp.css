@@ -2553,8 +2553,8 @@ select + .button {
   margin-right: 5px;
 }
 .input.attached.focus {
-  outline-offset: -2px;
-  outline-style: auto;
+  /* outline-offset: -2px; */
+  /* outline-style: auto; */
   outline-width: 5px;
   outline-color: -webkit-focus-ring-color;
 }
