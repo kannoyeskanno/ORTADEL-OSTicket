@@ -17,7 +17,7 @@
 }
 
 @media screen and (max-width: 600px) {
-  li.nav-item {
+  ul.nav.pull-right li.nav-item {
     width: 100%;
     border-bottom: 1px solid #777;
   }
@@ -1850,7 +1850,7 @@ ul#sub_nav a:hover
   border-bottom: solid #0A58CA;
 }
 
-li.nav-item.active span#tab-icon {
+ul.nav.pull-right li.nav-item.active span#tab-icon {
   color: #0A58CA !important;
 }
 
@@ -2512,23 +2512,23 @@ nav.navbar.navbar-expand-lg.navbar-dark.bg-dark > .container {
 }
 
 
-li.nav-item a {
+ul.nav.pull-right li.nav-item a {
   border-radius: 2rem;
 
 }
 
-li.nav-item a:hover {
+ul.nav.pull-right li.nav-item a:hover {
   background-color: #1D2329 !important;
   color: white !important;
 }
 
 
 
-li.nav-item a:hover::after {
+ul.nav.pull-right li.nav-item a:hover::after {
   width: 100%;
 }
 
-li.nav-item a.active {
+ul.nav.pull-right li.nav-item a.active {
   color: #0A58CA !important;  
   display: inline-block;
   box-shadow: 0px 4px 3px rgba(0, 0, 0, 0.3) !important; 
@@ -2536,7 +2536,7 @@ li.nav-item a.active {
 }
 
 
-li.nav-item a.active:hover {
+ul.nav.pull-right li.nav-item a.active:hover {
   color: white !important;  
   display: inline-block;
   box-shadow: 0px 4px 3px rgba(0, 0, 0, 0.3) !important; 
@@ -2547,12 +2547,12 @@ li.nav-item a.active:hover {
   nav.navbar.navbar-expand-lg.navbar-dark.bg-dark > .container {
   padding-right: 0px;
   }
-  li.nav-item a {
+  ul.nav.pull-right li.nav-item a {
     border-radius: 0px;
   
   }
 
-  li.nav-item a.active:hover {
+  ul.nav.pull-right li.nav-item a.active:hover {
     color: white !important;  
     display: block;
     box-shadow: 0px !important; 
@@ -2561,7 +2561,7 @@ li.nav-item a.active:hover {
   
   
   
-li.nav-item a.active {
+ul.nav.pull-right li.nav-item a.active {
   color: #0A58CA !important;  
   display: block;
   box-shadow: none; 
@@ -2585,25 +2585,29 @@ li.nav-item a.active {
 td label span {
   width: 100%;
 }
-
+input,
+table.padded td select,
+table.padded td label input,
 #ticketForm textarea, #ticketForm td label input {
-
   border-radius: .3em;
   border: solid lightgray .3px;
   box-shadow: inset 0px 3px 12px -10px gray;
 }
 
+input,
+table.padded td label input,
 #ticketForm td label input {
    padding: .5rem;
   margin-top: 1rem;
   
 }
-
+input:focus,
+table.padded td select:focus,
+table.padded td label input:focus,
 #ticketForm td label input:focus,
 #ticketForm textarea:focus{
   outline: 2px solid lightblue  
 }
-
 
 
 #new-ticket-client-actions {
@@ -2614,7 +2618,7 @@ td label span {
    box-sizing: border-box; 
 
 }
-
+table.padded,
 #ticketForm button, 
 #new-ticket-client-actions button {
   width: 200px;  
@@ -2624,7 +2628,7 @@ td label span {
   box-sizing: border-box; 
   margin-bottom: 1rem;
 }
-
+table.padded,
 #ticketForm table.table span {
   font-weight: 200;
 }
@@ -2633,14 +2637,14 @@ td label span {
   border-bottom: none;
   border-style: none;
 }
-
+table.padded,
 #ticketForm table td {
   width: 100%;
 }
 
 
 @media (max-width: 767px) {
-
+  table.padded,
   #ticketForm textarea, #ticketForm td label input {
 
     border-radius: .3em;
@@ -2649,14 +2653,14 @@ td label span {
     width: 100%;
     padding: 0;
   }
-
+  table.padded,
   #ticketForm td label input {
     padding: .5rem;
     
     
   }
 
-
+  table.padded,
   #ticketForm button {
   width: 200px;  
   padding: 1rem;
@@ -2667,7 +2671,7 @@ td label span {
   display: flex; 
 }
 
-
+table.padded,
   #ticketForm table.table {
     width: 100%;
     padding: 0  ;
@@ -2681,14 +2685,84 @@ td label span {
 
 
 
+/* ====== */
+/* Staff */
+/* ====== */
+
+#header {
+  position: sticky;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.nav-container#navbarNav#navbar-nav {
+  padding: 0px;
+  margin: 0;
+  margin-top: 0;
+  
+}
+
+.nav-item a {
+  font-size: 1px;
+  font-weight: 10;
+}
+
+.nav-item a.active:hover {
+  padding: none;
+}
+
+
+
+#main-tabs {
+  padding: .1em 1rem;
+}
+
+
+.navbar-nav {
+  margin-top: 0;
+  padding: 0 1rem;
+}
+
+
+
+#tab-icon svg {
+  fill: #1D2329;  
+  transition: fill 0.3s ease;  
+}
 
 
 
 
+.nav-item.active #tab-icon svg {
+  fill: #0A58CA ;  
+}
+.nav-item:hover #tab-icon svg,
+.nav-item:hover a,
+.nav-item.active:hover a,
+.nav-item.active:hover #tab-icon svg
+{
+  fill: #E4E4E4;
+  color: #E4E4E4;
+
+}
+
+#new-div {
+  display: none;
+}
 
 
+#sub_nav {
+  padding: 1.5rem 1rem;
+  margin-left: 1rem;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
 
-
-
-
-
+#sub_nav li a {
+  font-size: 1rem;
+  font-size: 20;
+  font-style: normal;
+  gap: 1rem;
+}

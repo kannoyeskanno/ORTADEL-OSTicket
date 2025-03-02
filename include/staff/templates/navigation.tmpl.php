@@ -1,4 +1,4 @@
-  <div class="container">
+  <div class="nav-container">
 <!--    
     <button id="burger-user-nav-btn" class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -47,3 +47,16 @@
       </ul>
     </div>
   </div>
+
+  <script>
+const pjaxContainer = document.getElementById('pjax-container');
+
+// Create a new element
+const newDiv = document.createElement('div');
+newDiv.textContent = 'This is a new div!';
+newDiv.id = 'new-div';
+
+// Append the new element to the container
+pjaxContainer.appendChild(newDiv);
+
+  </script>
