@@ -61,7 +61,7 @@ $users->values('id', 'name', 'default_email__address', 'account__id',
     'account__status', 'created', 'updated');
 $users->order_by($order . $order_column);
 ?>
-<div id="basic_search p-1">
+<div id="basic_search">
     <div style="min-height:25px;">
         <form action="users.php" method="get">
             <?php csrf_token(); ?>
@@ -152,18 +152,18 @@ else
  <input type="hidden" id="action" name="a" value="" >
  <input type="hidden" id="selected-count" name="count" value="" >
  <input type="hidden" id="org_id" name="org_id" value="" >
-<div class="table-responsive rounded-3 p-3" style="max-height: 60vh; overflow-y: auto; box-shadow: inset 5px 5px 10px rgba(0, 0, 0, 0.2);">
-<table id="user-table" class="table table-striped table-hover p-5" cellspacing="1" style=" border-radius: 20px;">
-<thead>
+ <div class="table-responsive d-flex justify-content-center p-3 rounded-1" style="max-height: 60vh; overflow-y: auto; box-shadow: inset 5px 5px 10px rgba(0, 0, 0, 0.2);">
+ <table id="tickets-table" class="table table-striped table-hover p-5" cellspacing="1" style="border-radius: .6em;">
+    <thead>
         <tr>
-            <th class="bg-dark" nowrap width="4%">&nbsp;</th>
-            <th class="bg-dark" ><a class="text-decoration-none text-dark" <?php echo $name_sort; ?> href="users.php?<?php
+            <th class="bg-dark" nowrap width="6%">&nbsp;</th>
+            <th class="bg-dark" width="20%"><a class="text-decoration-none text-dark" <?php echo $name_sort; ?> href="users.php?<?php
                 echo $qstr; ?>&sort=name"><?php echo __('Name'); ?></a></th>
-            <th class="bg-dark" width="22%"><a class="text-decoration-none text-dark" <?php echo $status_sort; ?> href="users.php?<?php
+            <th class="bg-dark" width="25%"><a class="text-decoration-none text-dark" <?php echo $status_sort; ?> href="users.php?<?php
                 echo $qstr; ?>&sort=status"><?php echo __('Status'); ?></a></th>
-            <th class="bg-dark" width="20%"><a class="text-decoration-none text-dark" <?php echo $create_sort; ?> href="users.php?<?php
+            <th class="bg-dark" width="25%"><a class="text-decoration-none text-dark" <?php echo $create_sort; ?> href="users.php?<?php
                 echo $qstr; ?>&sort=create"><?php echo __('Created'); ?></a></th>
-            <th class="bg-dark" width="20%"><a class="text-decoration-none text-dark" <?php echo $update_sort; ?> href="users.php?<?php
+            <th class="bg-dark" width="30%"><a class="text-decoration-none text-dark" <?php echo $update_sort; ?> href="users.php?<?php
                 echo $qstr; ?>&sort=update"><?php echo __('Updated'); ?></a></th>
         </tr>
     </thead>
@@ -187,7 +187,7 @@ else
                 if($ids && in_array($U['id'], $ids))
                     $sel=true;
                 ?>
-               <tr id="<?php echo $U['id']; ?>">
+               <tr width="6%"  id="<?php echo $U['id']; ?>">
                 <td id="check-box" nowrap align="center">
                     <input type="checkbox" value="<?php echo $U['id']; ?>" class="ckb mass nowarn"/>
                 </td>

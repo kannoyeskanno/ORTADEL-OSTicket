@@ -25,7 +25,7 @@ $plots = $report->getPlotData();
                     ?>" />
             </label>
             <label>
-                <?php echo __('period');?>:
+                <?php echo __('Period');?>:
                 <select name="period">
                     <?php foreach ($report::$end_choices as $val=>$desc)
                             echo "<option value='$val'>" . __($desc) . "</option>"; ?>
@@ -93,7 +93,7 @@ foreach ($groups as $g=>$desc) {
 <?php
     foreach ($data['columns'] as $j=>$c) {
       ?>
-        <th <?php if ($j === 0) echo 'width="30%" class="flush-left"'; ?>><?php echo Format::htmlchars($c);
+        <th <?php if ($j === 0) echo 'width="90%" class="flush-left"'; ?>><?php echo Format::htmlchars($c);
         switch ($c) {
           case 'Opened':
             ?>
