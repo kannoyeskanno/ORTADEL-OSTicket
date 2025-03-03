@@ -1152,7 +1152,7 @@ table { vertical-align:top; }
 
 table.list {
     clear:both;
-    background:#ccc;
+    /* background:#ccc; */
     margin: 2px 0;
     border-bottom: 1px solid #ccc;
 }
@@ -1182,7 +1182,7 @@ table.list th a {
 
 table.list thead th a { padding-right: 15px; display: block; white-space: nowrap; color: #000; background: url('../images/asc_desc.gif') 100% 50% no-repeat; }
 
-table.list thead th a.asc { background: url('../images/asc.gif') 100% 50% no-repeat #cfe6ff; }
+table.list thead th a.asc {/* background: url('../images/asc.gif') 100% 50% no-repeat #cfe6ff; */}
 table.list thead th a.desc { background: url('../images/desc.gif') 100% 50% no-repeat #cfe6ff; }
 table.list tbody td {
     background:#fff;

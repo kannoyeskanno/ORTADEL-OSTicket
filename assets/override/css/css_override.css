@@ -1743,14 +1743,10 @@ img.avatar {
 
 
 div#pjax-container {
-  justify-content: flex-start;
+  /* justify-content: flex-start; */
   padding: 0;
   margin-left: 0;
   background-color: #ffff;
-
-  
-
-  
 }
 
 div#content {
@@ -2956,6 +2952,7 @@ nav.navbar.navbar-expand-lg.navbar-dark.bg-dark {
 
 #content #basic_search div{
   margin-top: 0;
+  height: 100p;
 }
 
 
@@ -2967,7 +2964,8 @@ nav.navbar.navbar-expand-lg.navbar-dark.bg-dark {
   gap: .6rem;
   justify-content: space-between; 
   position: relative;             
-}
+  margin-left: 1rem;
+  }
 
 #content #basic_search div button.green.button.action-button.muted {
   padding: .2rem .8rem !important;
@@ -2981,6 +2979,7 @@ nav.navbar.navbar-expand-lg.navbar-dark.bg-dark {
 
 #content #basic_search div label {
   font-size: 1rem;
+ ;
 }
 
 #content #basic_search div label select {
@@ -3118,3 +3117,93 @@ button.button .pull-right {
   border: none;
   background-color: #1D2329;
 }
+
+
+#header div.container.mt-3 
+div.d-flex.justify-content-center.w-100.text-center.text-black{
+  justify-content: start;
+}
+
+#orgs-list table.list {
+  border-radius: 1rem;
+  margin-top: 1rem;
+}
+
+#orgs-list table.list thead th {
+
+  padding: 1rem;
+  background: #1D2329;
+} 
+
+#orgs-list table.list tbody td {
+  padding: 1.2rem;
+}
+
+#orgs-list table.list thead th a{
+  color: white;
+}
+
+#orgs-list table.list thead th a:hover {
+  color: #0A58CA;
+}
+#org-list table.list {
+  background-image: none !important;
+  background-color: #1D2329 !important;
+}
+
+
+
+#category-dropdown, #topic-dropdown {
+  display: none;
+  position: absolute;
+  /* background-color: #fff; */
+  /* border: 1px solid #ccc; */
+  /* box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); */
+  z-index: 1000;
+  min-width: 200px;
+}
+
+#category-dropdown, #topic-dropdown {
+  margin-right: 3rem;
+  top: auto;
+}
+
+#category-dropdown li, #topic-dropdown li {
+  padding: 10px;
+}
+
+#category-dropdown ul li, #topic-dropdown ul li {
+  display: block;
+}
+
+#category-dropdown:has(ul li:only-child), #topic-dropdown:has(ul li:only-child) {
+  height: auto;
+  max-height: 50px;
+  /* padding: 5px 0; */
+}
+
+#category-dropdown a, #topic-dropdown a {
+  color: #333;
+  text-decoration: none;
+}
+
+#category-dropdown a:hover, #topic-dropdown a:hover {
+  background-color: #f1f1f1;
+}
+#category-dropdown, #topic-dropdown {
+  border-color: none;
+  border: none;
+  box-shadow: none;
+}
+
+
+.form-control {
+  padding: .4rem !important;
+}
+
+
+span.action-button.muted {
+  font-size: small;
+  height: 40px;
+}
+
