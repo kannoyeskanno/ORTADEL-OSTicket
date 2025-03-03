@@ -2492,8 +2492,14 @@ table#tickets-table {
 }
 
 #task-table th a,
-#task-table tr td, #tickets-table tr td {
-  text-align: center;
+#task-table tr td, 
+#tickets-table tr td {
+  text-align: start;
+  padding: 1.2rem;
+}
+
+#task-table th {
+  padding: 0;
 }
 navbar navbar-expand-lg navbar-dark bg-dark {
 width: 100%;
