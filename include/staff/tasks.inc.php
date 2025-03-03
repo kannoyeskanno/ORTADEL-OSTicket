@@ -301,7 +301,7 @@ if ($thisstaff->hasPerm(Task::PERM_DELETE, false)) {
 <!-- SEARCH FORM END -->
 <div class="clear"></div>
 <div style="margin-bottom:20px; padding-top:5px;">
-<div class="sticky bar opaque">
+<div class="sticky-bar-opaque">
     <div class="content">
         <div class="pull-left flush-left">
             <h2><a href="<?php echo $refresh_url; ?>"
@@ -339,7 +339,7 @@ if ($thisstaff->hasPerm(Task::PERM_DELETE, false)) {
                 // Show headers
                 foreach ($queue_columns as $k => $column) {
                     echo sprintf( '<th width="%s"><a href="?sort=%s&dir=%s&%s"
-                            class="%s">%s</a></th>',
+                            class="%s">%s<i class="bi bi-arrow-down-up mx-2"></i></a></th>',
                             $column['width'],
                             $column['sort'] ?: $k,
                             $column['sort_dir'] ? 0 : 1,

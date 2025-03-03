@@ -162,7 +162,7 @@ return false;">
 
 <div class="clear"></div>
 <div style="margin-bottom:20px; padding-top:5px;">
-    <div class="sticky bar opaque">
+    <div class="sticky-bar-opaque">
         <div class="content">
             <div class="pull-left flush-left">
                 <h2><a href="<?php echo $refresh_url; ?>"
@@ -245,7 +245,7 @@ if ($queue->id > 0 && $queue->isOwner($thisstaff)) { ?>
             $dir = $sort['col'] != $C->id ?: ($sort['dir'] ? 'desc' : 'asc');
             $args['dir'] = $sort['col'] != $C->id ?: (int) !$sort['dir'];
             $args['sort'] = $C->id;
-            $heading = sprintf('<a text-light href="?%s" class="%s">%s</a>',
+            $heading = sprintf('<a text-light href="?%s" class="%s">%s <i class="bi bi-arrow-down-up mx-2"></i></a>',
                 Http::build_query($args), $dir, $heading);
         }
         echo sprintf('<th class="bg-dark" width="%s" data-id="%d">%s</th>',
@@ -254,7 +254,7 @@ if ($queue->id > 0 && $queue->isOwner($thisstaff)) { ?>
     ?>
         </tr>
     </thead>
-    <tbody>
+    <tbody id="main-tickets-table">
     <?php
     foreach ($tickets as $T) {
         echo '<tr>';
@@ -310,3 +310,8 @@ if ($queue->id > 0 && $queue->isOwner($thisstaff)) { ?>
 <?php
     } ?>
 </form>
+
+
+<script> 
+
+</script>

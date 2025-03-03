@@ -158,13 +158,13 @@ else
         <tr>
             <th class="bg-dark" nowrap width="6%">&nbsp;</th>
             <th class="bg-dark" width="20%"><a class="text-decoration-none text-dark" <?php echo $name_sort; ?> href="users.php?<?php
-                echo $qstr; ?>&sort=name"><?php echo __('Name'); ?></a></th>
+                echo $qstr; ?>&sort=name"><?php echo __('Name'); ?><i class="bi bi-arrow-down-up mx-2"></i></a></th>
             <th class="bg-dark" width="25%"><a class="text-decoration-none text-dark" <?php echo $status_sort; ?> href="users.php?<?php
-                echo $qstr; ?>&sort=status"><?php echo __('Status'); ?></a></th>
+                echo $qstr; ?>&sort=status"><?php echo __('Status'); ?><i class="bi bi-arrow-down-up mx-2"></i></a></th>
             <th class="bg-dark" width="25%"><a class="text-decoration-none text-dark" <?php echo $create_sort; ?> href="users.php?<?php
-                echo $qstr; ?>&sort=create"><?php echo __('Created'); ?></a></th>
+                echo $qstr; ?>&sort=create"><?php echo __('Created'); ?><i class="bi bi-arrow-down-up mx-2"></i></a></th>
             <th class="bg-dark" width="30%"><a class="text-decoration-none text-dark" <?php echo $update_sort; ?> href="users.php?<?php
-                echo $qstr; ?>&sort=update"><?php echo __('Updated'); ?></a></th>
+                echo $qstr; ?>&sort=update"><?php echo __('Updated'); ?><i class="bi bi-arrow-down-up mx-2"></i></a></th>
         </tr>
     </thead>
     <tbody>

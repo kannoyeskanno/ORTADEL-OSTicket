@@ -38,7 +38,7 @@ $plots = $report->getPlotData();
     </div>
 </div>
 <div class="clear"></div>
-<div style="margin-bottom:20px; padding-top:5px;">
+<div style="margin-bottom: 3rem; padding-top:5px;">
     <div class="pull-left flush-left">
         <h2><?php echo __('Ticket Activity');
             ?>&nbsp;<i class="help-tip icon-question-sign" href="#ticket_activity"></i></h2>
