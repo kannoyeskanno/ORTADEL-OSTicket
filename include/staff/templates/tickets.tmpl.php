@@ -102,7 +102,7 @@ if ($total) { ?>
             <th width="4%">&nbsp;</th>
             <?php
             } ?>
-            <th width="15%"><?php echo __('Ticket'); ?></th>
+            <th class="text-center" width="15%"><?php echo __('Ticket'); ?></th>
             <th width="20%"><?php echo __('Last Updated'); ?></th>
             <th width="20%"><?php echo __('Status'); ?></th>
             <th width="20%"><?php echo __('Subject'); ?></th>

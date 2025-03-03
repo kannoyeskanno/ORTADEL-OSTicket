@@ -2470,6 +2470,10 @@ table.table tfoot td a:hover {
   width: 100%;
 }
 
+#tickets-table td {
+  padding: .8rem;
+}
+
 table#tickets-table {
   border-top: 20px;
 }
@@ -2780,7 +2784,7 @@ table.padded,
 
 
 #sub_nav {
-  padding: 1.5rem 2.6rem;
+  padding: 1.2rem 2.6rem;
   display: flex;
   justify-content: start;
   align-items: center;
@@ -2836,7 +2840,7 @@ table.padded,
 
 
 /* Admin */
-
+#msg_error,
 #warning_bar {
   z-index: 199;
   height: 2rem;
@@ -2904,10 +2908,24 @@ div.attached.input.focus {
 }
 
 
-.help-tip.icon-question-sign:hover {
-  background-color: #1D2329;
-
-}
+  
 nav.navbar.navbar-expand-lg.navbar-dark.bg-dark {
  background-color: #1D2329;
+}
+
+
+#msg_warning {
+  padding: .6rem;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+
+#task-table tr{
+  text-align: start;
+  padding: 1rem;
+}
+
+#task-thead tr th {
+  text-align: start;
 }

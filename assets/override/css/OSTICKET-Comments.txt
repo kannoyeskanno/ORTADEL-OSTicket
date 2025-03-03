@@ -2,28 +2,28 @@
 - Welcome sa baba ---------------------------------------------------------(done)
 - Align bullets to header (Footer) ----------------------------------------(done)
 - Spacing Logo to "Open New Ticket" (Open a New Ticket)
-- Format of Textbox
-- Spacing of Main Content
-- enough padding of content area.
+- Format of Textbox -------------------------------------------------------(done)
+- Spacing of Main Content -------------------------------------------------(done)
+- enough padding of content area. -----------------------------------------(done)
 
-- Consistent buttons (Open a New Ticket)
+- Consistent buttons (Open a New Ticket) ----------------------------------(done)
 - Consistent Text Box (Check New Tickets) - sundan ito
 - Footer (nataas)
 
-- Logo (Ortadel lang) Retain the Logo above
-- Ticlets tab - sorbang laki ng Open
+- Logo (Ortadel lang) Retain the Logo above -------------------------------(done)
+- Ticlets tab - sorbang laki ng Open --------------------------------------(done)
 
 - Align value of table
 - Override Kanno Kanno (Users) User Directory
 
 - Inconsistent (
-- Sub nav (too compressed)
+- Sub nav (too compressed) ------------------------------------------------(done)
 
 - bootsstrap formatting (check front)
 - Ortadel font (Roboto)
 
 TUESDAY CHECK
-WEDNESDAY DEPLOYMENT PROCEDURE OF OSTICKET
+TUESDAY DEPLOYMENT PROCEDURE OF OSTICKET
 
 TO DO:
 Match all override.

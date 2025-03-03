@@ -234,7 +234,7 @@ if ($queue->id > 0 && $queue->isOwner($thisstaff)) { ?>
     <?php
     $canManageTickets = $thisstaff->canManageTickets();
     if ($canManageTickets) { ?>
-            <th class="bg-dark" style="width:12px"></th>
+            <th class="bg-dark" style="width:3rem"></th>
     <?php
     }
 
@@ -259,8 +259,9 @@ if ($queue->id > 0 && $queue->isOwner($thisstaff)) { ?>
     foreach ($tickets as $T) {
         echo '<tr>';
         if ($canManageTickets) { ?>
-            <td><input type="checkbox" class="ckb" name="tids[]"
-                value="<?php echo $T['ticket_id']; ?>" /></td>
+<td class="d-flex justify-content-center align-items-center">
+  <input type="checkbox" class="ckb" name="tids[]" value="<?php echo $T['ticket_id']; ?>" />
+</td>
     <?php
         }
         foreach ($columns as $C) {

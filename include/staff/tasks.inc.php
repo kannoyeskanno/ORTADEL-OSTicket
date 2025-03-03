@@ -393,7 +393,7 @@ if ($thisstaff->hasPerm(Task::PERM_DELETE, false)) {
                         if ($ids && in_array($T['id'], $ids))
                             $sel = true;
                         ?>
-                    <td align="center" class="nohover">
+                    <td align="center" class="d-flex justify-content-center align-items-center nohover">
                         <input class="ckb" type="checkbox" name="tids[]"
                             value="<?php echo $T['id']; ?>" <?php echo $sel?'checked="checked"':''; ?>>
                     </td>
