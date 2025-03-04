@@ -82,9 +82,10 @@ $qstr.='&amp;order='.($order=='DESC' ? 'ASC' : 'DESC');
 
 <div id="basic_search">
     <div style="min-height:25px;">
-    <form action="directory.php" method="GET" name="filter">
-       <input type="text" name="q" value="<?php echo Format::htmlchars($_REQUEST['q']); ?>" >
-        <select name="did" id="did">
+        
+    <form class="pt-2" action="directory.php" method="GET" name="filter">
+       <input type="text" name="q" style="margin-left: .8rem; height: 2.4rem;" placeholder="Search..." value="<?php echo Format::htmlchars($_REQUEST['q']); ?>" >
+        <select name="did" id="did" style="margin-left: .8rem; height: 2.4rem;">
              <option value="0">&mdash; <?php echo __('All Departments');?> &mdash;</option>
              <?php
                 foreach ($thisstaff->getDepartmentNames() as $id=>$name) {
@@ -94,14 +95,14 @@ $qstr.='&amp;order='.($order=='DESC' ? 'ASC' : 'DESC');
              ?>
         </select>
         &nbsp;&nbsp;
-        <input type="submit" name="submit" value="<?php echo __('Filter');?>"/>
+        <input class="p-2" type="submit" name="submit" value="<?php echo __('Filter');?>"/>
         &nbsp;<i class="help-tip icon-question-sign" href="#apply_filtering_criteria"></i>
     </form>
  </div>
 </div>
 <div class="clear"></div>
-<div style="margin-bottom:20px; padding-top:5px;">
-    <div class="pull-left flush-left">
+<div style="margin-bottom: 4rem; padding-top:5px;">
+    <div class="pull-left flush-left mb-3 mt-3">
         <h2><?php echo __('Agents');?>
             &nbsp;<i class="help-tip icon-question-sign" href="#staff_members"></i>
         </h2>
@@ -113,15 +114,18 @@ $qstr.='&amp;order='.($order=='DESC' ? 'ASC' : 'DESC');
     else
         $showing=__('No agents found!');
     ?>
-<table class="table table-striped table-hover list mt-3" border="0" cellspacing="1" cellpadding="0" width="100%">
+
+
+<div class="table-responsive d-flex justify-content-center p-3 rounded-1" style="max-height: 60vh; overflow-y: auto; box-shadow: inset 5px 5px 10px rgba(0, 0, 0, 0.2);">
+<table id="agent-directory-table" class="table table-striped table-hover list mt-3" border="0" cellspacing="1" cellpadding="0" width="100%">
     <thead>
         <tr>
-            <th width="20%"><a <?php echo $name_sort; ?> href="directory.php?<?php echo $qstr; ?>&sort=name"><?php echo __('Name');?></a></th>
-            <th width="15%"><a  <?php echo $dept_sort; ?>href="directory.php?<?php echo $qstr; ?>&sort=dept"><?php echo __('Department');?></a></th>
-            <th width="25%"><a  <?php echo $email_sort; ?>href="directory.php?<?php echo $qstr; ?>&sort=email"><?php echo __('Email Address');?></a></th>
-            <th width="15%"><a <?php echo $phone_sort; ?> href="directory.php?<?php echo $qstr; ?>&sort=phone"><?php echo __('Phone Number');?></a></th>
-            <th width="10%"><a <?php echo $ext_sort; ?> href="directory.php?<?php echo $qstr; ?>&sort=ext"><?php echo __(/* As in a phone number `extension` */ 'Extension');?></a></th>
-            <th width="15%"><a <?php echo $mobile_sort; ?> href="directory.php?<?php echo $qstr; ?>&sort=mobile"><?php echo __('Mobile Number');?></a></th>
+            <th width="16%"><a <?php echo $name_sort; ?> href="directory.php?<?php echo $qstr; ?>&sort=name"><?php echo __('Name');?><i class="bi bi-arrow-down-up mx-4"></i></a></th>
+            <th width="16%"><a  <?php echo $dept_sort; ?>href="directory.php?<?php echo $qstr; ?>&sort=dept"><?php echo __('Department');?><i class="bi bi-arrow-down-up mx-4"></i></a></th>
+            <th width="16%"><a  <?php echo $email_sort; ?>href="directory.php?<?php echo $qstr; ?>&sort=email"><?php echo __('Email Address');?><i class="bi bi-arrow-down-up mx-4"></i></a></th>
+            <th width="16%"><a <?php echo $phone_sort; ?> href="directory.php?<?php echo $qstr; ?>&sort=phone"><?php echo __('Phone Number');?><i class="bi bi-arrow-down-up mx-4"></i></a></th>
+            <th width="16%"><a <?php echo $ext_sort; ?> href="directory.php?<?php echo $qstr; ?>&sort=ext"><?php echo __(/* As in a phone number `extension` */ 'Extension');?><i class="bi bi-arrow-down-up mx-4"></i></a></th>
+            <th width="16%"><a <?php echo $mobile_sort; ?> href="directory.php?<?php echo $qstr; ?>&sort=mobile"><?php echo __('Mobile Number');?><i class="bi bi-arrow-down-up mx-4"></i></a></th>
         </tr>
     </thead>
     <tbody>
@@ -153,3 +157,4 @@ $qstr.='&amp;order='.($order=='DESC' ? 'ASC' : 'DESC');
     </tfoot>
 </table>
 
+</div>

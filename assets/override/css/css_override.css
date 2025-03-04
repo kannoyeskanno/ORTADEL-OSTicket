@@ -2126,7 +2126,7 @@ table.table.table-striped.table-hover.list thead th{
 }
 
 table.list thead th a.desc {
-  background: #cfe6ff;
+  /* background: #cfe6ff; */
 }
 
 
@@ -2252,7 +2252,7 @@ table.list thead th a.desc {
 div.content {
   width: 100%;                /* Make the content span the full width */
   display: block;              /* Make it block-level (for better alignment) */
-  max-width: 90%;             /* Ensure it doesn’t exceed the width */
+  /* max-width: 90%; */             /* Ensure it doesn’t exceed the width */
 }
 
 div.content .pull-right {
@@ -2287,7 +2287,7 @@ div.content .pull-right {
 }
 /* Table Styles */
 table.table {
-  width: 90%;
+  width: 100%;
   border-collapse: collapse;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   border-radius: 10px;
@@ -3061,9 +3061,14 @@ div.attached.input.d-flex.justify-content-end:focus {
 
 
 .sticky-bar-opaque {
-  margin-bottom: 3rem;
+  margin-bottom: 1rem;
+
+  padding: 1rem;
 }
 
+.sticky-bar-opaque .content {
+  padding-bottom: 1rem;
+}
 #tickets-table tbody td,
 #main-tickets-table td{
   padding-left: .6rem !important;
@@ -3251,6 +3256,9 @@ span.action-button.muted {
   width: 100px;
 }
 
+
+
+
 #users-more-btn #users-more-btn-txt{
   font-size: .8rem;
   
@@ -3278,8 +3286,69 @@ span.action-button.muted {
   margin-left: 5px; 
 }
 
+#tickets-action-btn .action-button-btn {
+  max-width: 100px !important;
+}
 
+
+#sticky-bar-opaque div.content {
+  width: 100% !important;
+  background-color: red;
+}
+
+/* #basic_search form {
+  background-color: red;
+  width: 600px;
+} */
+
+
+#agent-directory-table thead a.desc {
+  background: none;
+}
+#agent-directory-table tbody td {
+  padding: 1.2rem;
+
+}
+
+
+#basic_search {
+  /* display: flex;
+  flex-direction: row;
+  background-color: gray;
+  gap: 1rem; */
+  padding: .3rem;
+}
 /* #user-actions-btn a, #user-actions-btn span{
   padding: .41rem !important;
 
 } */
+
+
+#agent-directory-table th,
+#agent-directory-table td {
+    width: 16.66%;
+    text-align: left;
+    
+}
+
+#agent-directory-table th a {
+    display: block;
+    padding: 8px 1rem;
+    text-decoration: none;
+}
+
+
+
+#action-dropdown-more-task,
+#action-dropdown-more-task {
+  position: absolute !important;
+  right: 0;
+  margin-right: 1rem !important;
+  right: -200px !important;
+  
+}
+
+td label {
+  text-align: start;
+}
+

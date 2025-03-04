@@ -7,12 +7,12 @@ if(!defined('OSTSTAFFINC') || !$thisstaff) die('Access Denied');
     <input type="hidden" name="cid" value="<?php echo Format::htmlchars($_REQUEST['cid']); ?>"/>
     <input type="hidden" name="topicId" value="<?php echo Format::htmlchars($_REQUEST['topicId']); ?>"/>
 
-    <div id="basic_search">
+    <div id="basic_search" style="padding: .4rem .4rem .4rem 60vw; ">
         <!-- <div class="attached input"> -->
 
-        <div class="input-group flex-nowrap">
+        <div class="pull-left flush-left input-group flex-nowrap">
 
-            <input id="query" class="form-control" type="text" size="20" name="q" autofocus
+            <input id="query" class="form-control" type="text" size="20" placeholder="Search..." name="q" autofocus
                 value="<?php echo Format::htmlchars($_REQUEST['q']); ?>">
             <!-- <button class="attached button" id="searchSubmit" type="submit">
                 <i class="icon icon-search"></i>
@@ -165,7 +165,8 @@ if($_REQUEST['q'] || $_REQUEST['cid'] || $_REQUEST['topicId']) { //Search.
         foreach ($categories as $C) {
             echo sprintf('
                 <li>
-                    <h4><a class="truncate" style="max-width:600px" href="kb.php?cid=%d">%s (%d)</a> - <span>%s</span></h4>
+                    <h4><i class="bi bi-check-circle-fill mx-2" style="color: #0A58CA; font-size: 1rem;"></i>
+ <a class="truncate" style="max-width:600px" href="kb.php?cid=%d">%s (%d)</a> - <span>%s</span></h4>
                     %s ',
                 $C->getId(),$C->getLocalName(),$C->getNumFAQs(),
                 $C->getVisibilityDescription(),

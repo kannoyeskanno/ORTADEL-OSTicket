@@ -63,8 +63,8 @@ else
 ?>
 <form action="canned.php" method="POST" name="canned">
 
-<div class="sticky bar opaque">
-    <div class="content">
+<div class="sticky-bar-opaque">
+    <div class="content" style="width: 100% !important;">
         <div class="pull-left flush-left">
             <h2><?php echo __('Canned Responses');?></h2>
         </div>
@@ -76,8 +76,9 @@ else
                     <span ><i class="icon-cog"></i> <?php echo __('More');?></span>
             </span>
             <div id="action-dropdown-more" class="action-dropdown anchor-right">
-                <ul id="actions">
-                    <li>
+                <!-- <ul id="actions"> -->
+                <ul id="actions" class="action-dropdown-more" style="position: absolute; top: 0; right: -200px; margin-right: 200px;">
+                <li>
                         <a class="confirm" data-name="enable" href="canned.php?a=enable">
                             <i class="icon-ok-sign icon-fixed-width"></i>
                             <?php echo __( 'Enable'); ?>
@@ -104,13 +105,14 @@ else
  <?php csrf_token(); ?>
  <input type="hidden" name="do" value="mass_process" >
  <input type="hidden" id="action" name="a" value="" >
- <table class="list" border="0" cellspacing="1" cellpadding="0" width="940">
+ <div class="table-responsive d-flex justify-content-center p-3 rounded-1" style="max-height: 60vh; overflow-y: auto; box-shadow: inset 5px 5px 10px rgba(0, 0, 0, 0.2);">
+    <table id="task-table" class="table table-striped table-hover p-5" cellspacing="1" style="border-radius: .6em;">
     <thead>
         <tr>
             <th width="4%">&nbsp;</th>
-            <th width="46%"><a <?php echo $title_sort; ?> href="canned.php?<?php echo $qstr; ?>&sort=title"><?php echo __('Title');?></a></th>
-            <th width="10%"><a  <?php echo $status_sort; ?> href="canned.php?<?php echo $qstr; ?>&sort=status"><?php echo __('Status');?></a></th>
-            <th width="20%"><a  <?php echo $dept_sort; ?> href="canned.php?<?php echo $qstr; ?>&sort=dept"><?php echo __('Department');?></a></th>
+            <th width="30%"><a <?php echo $title_sort; ?> href="canned.php?<?php echo $qstr; ?>&sort=title"><?php echo __('Title');?></a></th>
+            <th width="30%"><a  <?php echo $status_sort; ?> href="canned.php?<?php echo $qstr; ?>&sort=status"><?php echo __('Status');?></a></th>
+            <th width="30%"><a  <?php echo $dept_sort; ?> href="canned.php?<?php echo $qstr; ?>&sort=dept"><?php echo __('Department');?></a></th>
             <th width="20%" nowrap><a  <?php echo $updated_sort; ?>href="canned.php?<?php echo $qstr; ?>&sort=updated"><?php echo __('Last Updated');?></a></th>
         </tr>
     </thead>
@@ -155,6 +157,7 @@ else
      </tr>
     </tfoot>
 </table>
+</div>
 <?php
 if($res && $num): //Show options..
     echo '<div>&nbsp;'.__('Page').':'.$pageNav->getPageLinks().'&nbsp;</div>';

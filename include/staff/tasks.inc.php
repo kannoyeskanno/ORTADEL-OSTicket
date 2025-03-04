@@ -273,7 +273,7 @@ if ($thisstaff->hasPerm(Task::PERM_DELETE, false)) {
 ?>
 <!-- SEARCH FORM START ffffffffffffffff-->
 <div id='basic_search'>
-  <div class="pull-right" style="height:25px">
+  <div class="pull-right" style="height:25px padding: 1rem;">
     <span class="valign-helper"></span>
     <?php
         require STAFFINC_DIR.'templates/tasks-queue-sort.tmpl.php';
@@ -292,7 +292,7 @@ if ($thisstaff->hasPerm(Task::PERM_DELETE, false)) {
         <div class="input-group flex-nowrap">
 
         
-        <input type="text" class="form-control" data-url="ajax.php/tasks/lookup" name="query"
+        <input type="text" class="form-control" placeholder="Search..." data-url="ajax.php/tasks/lookup" name="query"
                    autofocus size="30" value="<?php echo Format::htmlchars($_REQUEST['query'], true); ?>"
                    autocomplete="off" autocorrect="off" autocapitalize="off">
 <!-- 
@@ -314,7 +314,7 @@ if ($thisstaff->hasPerm(Task::PERM_DELETE, false)) {
 <div class="clear"></div>
 <div style="margin-bottom:20px; padding-top:5px;">
 <div class="sticky-bar-opaque">
-    <div class="content">
+    <div class="content w-100" style="max-width: 100%;">
         <div class="pull-left flush-left">
             <h2><a href="<?php echo $refresh_url; ?>"
                 title="<?php echo __('Refresh'); ?>"><i class="icon-refresh"></i> <?php echo

@@ -75,7 +75,7 @@ if ($actions && isset($options['status'])) {
     </span>
     <div id="action-dropdown-moreoptions"
         class="action-dropdown anchor-right">
-        <ul>
+        <ul id="action-dropdown-more-task" style="right: 0; position: absolute !important; margin-right: 200px !important;">
     <?php foreach ($actions as $a => $action) { ?>
             <li <?php
                 if ($action['class'])

@@ -38,6 +38,8 @@ if (!$nextStatuses)
 
 <span
     class="action-button"
+    style="width: 50px;"
+    
     data-dropdown="#action-dropdown-statuses" data-placement="bottom" data-toggle="tooltip" title="<?php echo __('Change Status'); ?>">
     <i class="icon-caret-down pull-right"></i>
     <a class="tickets-action"
@@ -47,7 +49,8 @@ if (!$nextStatuses)
 </span>
 <div id="action-dropdown-statuses"
     class="action-dropdown anchor-right">
-    <ul <?php if (count($nextStatuses) > 20) echo 'style="height:500px;overflow-y:scroll"'; ?>>
+    
+    <ul  style="right: 0; position: absolute !important; margin-right: -10px !important;" <?php if (count($nextStatuses) > 20) echo 'style="height:500px;overflow-y:scroll"'; ?>>
 <?php foreach ($nextStatuses as $status) { ?>
         <li>
             <a class="no-pjax <?php

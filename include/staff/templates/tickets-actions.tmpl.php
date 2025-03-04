@@ -9,6 +9,7 @@ if ($agent->canManageTickets())
 // Mass Claim/Assignment
 if ($agent->hasPerm(Ticket::PERM_ASSIGN, false)) {?>
 <span
+style="max-width: 50px;"
     class="action-button" data-placement="bottom"
     data-dropdown="#action-dropdown-assign" data-toggle="tooltip" title=" <?php
     echo __('Assign'); ?>">
@@ -18,7 +19,7 @@ if ($agent->hasPerm(Ticket::PERM_ASSIGN, false)) {?>
         href="#tickets/mass/assign"><i class="icon-user"></i></a>
 </span>
 <div id="action-dropdown-assign" class="action-dropdown anchor-right">
-  <ul>
+  <ul style="right: 0; position: absolute !important; margin-right: -20px !important;">
      <li><a class="no-pjax tickets-action"
         href="#tickets/mass/claim"><i
         class="icon-chevron-sign-down"></i> <?php echo __('Claim'); ?></a>
@@ -35,9 +36,12 @@ if ($agent->hasPerm(Ticket::PERM_ASSIGN, false)) {?>
 
 //Mass Merge
 if ($agent->hasPerm(Ticket::PERM_MERGE, false)) {?>
- <a class="button action-button tickets-action" id="tickets-merge" data-placement="bottom"
+<span style="max-width: 20px;">
+  <a class="button action-button tickets-action" id="tickets-merge" data-placement="bottom"
     data-toggle="tooltip" title="<?php echo __('Merge'); ?>"
-    href="#tickets/mass/merge"><i class="icon-code-fork"></i></a>
+    href="#tickets/mass/merge" style="width: 20px;"><i class="icon-code-fork"></i>
+  </a>
+</span>
 <?php
 }
 
@@ -45,7 +49,8 @@ if ($agent->hasPerm(Ticket::PERM_MERGE, false)) {?>
 if ($agent->hasPerm(Ticket::PERM_LINK, false)) {?>
  <a class="button action-button tickets-action" id="tickets-link" data-placement="bottom"
     data-toggle="tooltip" title="<?php echo __('Link'); ?>"
-    href="#tickets/mass/link"><i class="icon-link"></i></a>
+    href="#tickets/mass/link" style="width: 20px; padding: 6px;"><i class="icon-link"></i>
+ </a>
 <?php
 }
 
@@ -53,7 +58,7 @@ if ($agent->hasPerm(Ticket::PERM_LINK, false)) {?>
 if ($agent->hasPerm(Ticket::PERM_TRANSFER, false)) {?>
  <a class="action-button tickets-action" id="tickets-transfer" data-placement="bottom"
     data-toggle="tooltip" title="<?php echo __('Transfer'); ?>"
-    href="#tickets/mass/transfer"><i class="icon-share"></i></a>
+    href="#tickets/mass/transfer" style="width: 20px; padding: 6px;"><i class="icon-share"></i></a>
 <?php
 }
 
@@ -62,7 +67,7 @@ if ($agent->hasPerm(Ticket::PERM_TRANSFER, false)) {?>
 if ($agent->hasPerm(Ticket::PERM_DELETE, false)) {?>
  <a class="red button action-button tickets-action" id="tickets-delete" data-placement="bottom"
     data-toggle="tooltip" title="<?php echo __('Delete'); ?>"
-    href="#tickets/mass/delete"><i class="icon-trash"></i></a>
+    href="#tickets/mass/delete" style="width: 20px; padding: 6px;"><i class="icon-trash"></i></a>
 <?php
 }
 

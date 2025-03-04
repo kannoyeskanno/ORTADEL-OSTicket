@@ -121,19 +121,26 @@ else
     $showing .= __('No organizations found!');
 
 ?>
+
+
+
+
 <form id="orgs-list" action="orgs.php" method="POST" name="staff" >
  <?php csrf_token(); ?>
  <input type="hidden" name="a" value="mass_process" >
  <input type="hidden" id="action" name="do" value="" >
  <input type="hidden" id="selected-count" name="count" value="" >
- <table class="list" border="0" cellspacing="1" cellpadding="0" width="940">
-    <thead>
+ 
+
+ <div class="table-responsive d-flex justify-content-center p-3 rounded-1" style="max-height: 60vh; overflow-y: auto; box-shadow: inset 5px 5px 10px rgba(0, 0, 0, 0.2);">
+ <table  class="table table-striped table-hover list mt-3" border="0" cellspacing="1" cellpadding="0" width="100%">
+ <thead>
         <tr>
             <th nowrap width="4%">&nbsp;</th>
-            <th width="45%"><a <?php echo $name_sort; ?> href="orgs.php?<?php echo $qstr; ?>&sort=name"><?php echo __('Name'); ?></a></th>
-            <th width="11%"><a <?php echo $users_sort; ?> href="orgs.php?<?php echo $qstr; ?>&sort=users"><?php echo __('Users'); ?></a></th>
-            <th width="20%"><a <?php echo $create_sort; ?> href="orgs.php?<?php echo $qstr; ?>&sort=create"><?php echo __('Created'); ?></a></th>
-            <th width="20%"><a <?php echo $update_sort; ?> href="orgs.php?<?php echo $qstr; ?>&sort=update"><?php echo __('Last Updated'); ?></a></th>
+            <th width="45%"><a <?php echo $name_sort; ?> href="orgs.php?<?php echo $qstr; ?>&sort=name"><?php echo __('Name'); ?><i class="bi bi-arrow-down-up mx-4"></i></a></th>
+            <th width="11%"><a <?php echo $users_sort; ?> href="orgs.php?<?php echo $qstr; ?>&sort=users"><?php echo __('Users'); ?><i class="bi bi-arrow-down-up mx-4"></i></a></th>
+            <th width="20%"><a <?php echo $create_sort; ?> href="orgs.php?<?php echo $qstr; ?>&sort=create"><?php echo __('Created'); ?><i class="bi bi-arrow-down-up mx-4"></i></a></th>
+            <th width="20%"><a <?php echo $update_sort; ?> href="orgs.php?<?php echo $qstr; ?>&sort=update"><?php echo __('Last Updated'); ?><i class="bi bi-arrow-down-up mx-4"></i></a></th>
         </tr>
     </thead>
     <tbody>
@@ -176,6 +183,7 @@ else
      </tr>
     </tfoot>
 </table>
+ </div>
 <?php
 if ($total): //Show options..
     echo '<div>';
