@@ -112,7 +112,7 @@ if (osTicket::is_ie()) {
 <body>
 <?php
 if ($nav) { ?>
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="position: sticky; top: 0; z-index: 1000;">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="position: sticky; top: 0; z-index: 999;">
 
     <div class="container">
         <a class="navbar-brand" href="#"></a>

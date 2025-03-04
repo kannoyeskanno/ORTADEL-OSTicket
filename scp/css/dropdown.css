@@ -10,7 +10,12 @@
   margin-top: 8px;
 }
 .action-dropdown ul, .noclick-dropdown ul {
+  position: absolute;
+  /* margin-left: 3rem!important; */!i;!;
+  z-index: 80;
+  top: 0;
   text-align: left;
+  position: absolute;
   font-size: 0.95em;
   min-width: 140px;
   list-style: none;
@@ -22,6 +27,7 @@
   overflow: visible;
   padding: 4px 0;
   margin: 0;
+  z-index: 888 !important;!i;!;
 }
 .action-dropdown ul li, .noclick-dropdown ul li {
   list-style: none;

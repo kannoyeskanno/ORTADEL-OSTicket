@@ -91,7 +91,7 @@ if (osTicket::is_ie())
     elseif($ost->getNotice())
         echo sprintf('<div id="notice_bar">%s</div>', $ost->getNotice());
     ?>
-    <div id="header" class="py-1 px-3 position-sticky top-0 overflow-hidden d-flex justify-content-between z-100 bg-dark">
+    <div id="header" class="py-1 px-3 position-sticky top-0 overflow-hidden d-flex justify-content-between z-999 bg-dark" style="z-index: 999 !important;">
 <a id="nav-brand" class="nav-brand flex-shrink-0 text-decoration-none justify-content-center d-md-flex border-b-none mb-0 ms-3 flex-row align-items-start">
         <img src="https://ortadeltech.com/assets/images/ORTADEL_logo.png" width="35" style="margin-right: .8rem;" alt="logo">
         <span class="ml-2 text-light">
