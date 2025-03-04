@@ -2168,10 +2168,7 @@ table.list thead th a.desc {
       padding: 1rem;
   }
 
-  #user-action-btn {
-      display: flex;
-      align-items: center;
-  }
+
 
   #user-top-bar {
       display: flex;
@@ -3228,3 +3225,61 @@ span.action-button.muted {
 .action-dropdown ul, .noclick-dropdown ul {
   margin-right: 250px;
 }
+#users-more {
+  width: 230px;
+  
+}
+#users-more,
+#bleed-kb-items {
+  position: absolute;
+  right: 0;
+  margin-right: 15px;
+  max-width: 200px !important;
+}
+
+
+.action-button,
+#user-actions-btn a, #user-actions-btn span,
+#kb-action span {
+  background-image: none !important;
+  background-color: white;
+  text-align: center;
+  font-size: .8rem;
+  padding: .4rem;
+  box-sizing: 0px 1px 12px 10px gray;
+  border: none;
+  width: 100px;
+}
+
+#users-more-btn #users-more-btn-txt{
+  font-size: .8rem;
+  
+}
+
+
+
+#users-more-btn {
+  vertical-align: middle;
+  margin-bottom: 0;
+  display: inline-flex; 
+  align-items: center;  
+  justify-content: center; 
+  
+}
+
+#users-more-btn-txt {
+  display: inline-flex; 
+  align-items: center;  
+  justify-content: center; 
+  
+}
+
+#users-more-btn i.icon-caret-down {
+  margin-left: 5px; 
+}
+
+
+/* #user-actions-btn a, #user-actions-btn span{
+  padding: .41rem !important;
+
+} */

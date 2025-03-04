@@ -111,13 +111,13 @@ $users->order_by($order . $order_column);
                     <?php echo __('Import'); ?>
                 </a>
                 <?php } ?>
-                <span class="action-button" data-dropdown="#action-dropdown-more"
+                <span id="users-more-btn" class="action-button" data-dropdown="#action-dropdown-more"
                       style="/*DELME*/ vertical-align:top; margin-bottom:0">
                     <i class="icon-caret-down pull-right"></i>
-                    <span ><i class="icon-cog"></i> <?php echo __('More');?></span>
+                    <span id="users-more-btn-txt"><i class="icon-cog"></i> <?php echo __('More');?></span>
                 </span>
                 <div id="action-dropdown-more" class="action-dropdown anchor-right">
-                    <ul>
+                    <ul id="users-more">
                         <?php if ($thisstaff->hasPerm(User::PERM_EDIT)) { ?>
                         <li><a href="#add-to-org" class="users-action">
                             <i class="icon-group icon-fixed-width"></i>

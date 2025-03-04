@@ -25,17 +25,17 @@ if(!defined('OSTSTAFFINC') || !$thisstaff) die('Access Denied');
             </span>
         </div>
 
-        <div class="pull-right">
-            <span class="action-button muted" data-dropdown="#category-dropdown">
+        <div id="kb-action" class="pull-right">
+            <span id="kb-action-item" class="action-button muted" data-dropdown="#category-dropdown">
                 <i class="icon-caret-down pull-right"></i>
                 <span>
                     <!-- <i class="icon-filter"></i> -->
                     <?php echo __('Category'); ?>
                 </span>
             </span>
-            <span class="action-button muted" data-dropdown="#topic-dropdown">
+            <span id="kb-action-item" class="action-button muted" data-dropdown="#topic-dropdown">
                 <i class="icon-caret-down pull-right"></i>
-                <span>
+                <span id="span2">
                     <!-- <i class="icon-filter"></i> -->
                     <?php echo __('Help Topic'); ?>
                 </span>
@@ -47,7 +47,7 @@ if(!defined('OSTSTAFFINC') || !$thisstaff) die('Access Denied');
                 var form = $(this).closest('form');
                 form.find('[name=cid]').val($(event.target).data('cid'));
                 form.submit();">
-            <ul class="bleed-left">
+            <ul id="bleed-kb-items" class="bleed-left">
 <?php
 $total = FAQ::objects()->count();
 
@@ -76,7 +76,7 @@ foreach ($categories as $C) {
                 var form = $(this).closest('form');
                 form.find('[name=topicId]').val($(event.target).data('topicId'));
                 form.submit();">
-            <ul class="bleed-left">
+            <ul id="bleed-kb-items" class="bleed-left">
 <?php
 $topics = Topic::objects()
     ->annotate(array('faq_count'=>SqlAggregate::COUNT('faqs')))
